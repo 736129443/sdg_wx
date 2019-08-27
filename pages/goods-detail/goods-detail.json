@@ -1,0 +1,10 @@
+{
+"usingComponents": {
+    "van-goods-action": "/vanUI/dist/goods-action/index",
+    "van-goods-action-icon": "/vanUI/dist/goods-action-icon/index",
+    "van-goods-action-button": "/vanUI/dist/goods-action-button/index",
+    "van-action-sheet": "/vanUI/dist/action-sheet/index",
+    "van-stepper": "/vanUI/dist/stepper/index",
+    "van-button": "/vanUI/dist/button/index"
+}
+}

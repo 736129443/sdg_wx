@@ -1,0 +1,24 @@
+.page-bg {
+  background: #f2f2f2;
+}
+.page-bg .image-bg {
+  padding: 20rpx;
+  background: #fff;
+}
+.page-bg .button-bg {
+  box-sizing: content-box;
+  padding: 80rpx 30rpx;
+}
+.page-bg .button-bg .publish-button {
+  width: 690rpx;
+}
+.page-bg .cell-group {
+  margin-top: 20rpx;
+}
+.page-bg .unit-label {
+  color: #333;
+}
+.page-bg .van-cell-group__title {
+  color: #333;
+  font-size: 15px;
+}

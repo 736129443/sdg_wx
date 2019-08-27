@@ -1,0 +1,2 @@
+<!--common/category-item/category-box/category-box.wxml-->
+<slot ></slot>

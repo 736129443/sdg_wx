@@ -1,0 +1,3 @@
+<van-nav-bar bind:click-left="back" title="{{title}}" left-text="" fixed>
+    <van-icon name="arrow-left" slot="left" />
+</van-nav-bar>

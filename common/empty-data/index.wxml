@@ -1,0 +1,6 @@
+<view class="tips-bg" wx:if="{{show}}">
+    <view class="nothing-goods-bg">
+        <image class="nothing-goods-img" src="/images/empty-icon.png"></image>
+        <text class="nothing-goods-text">{{tips}}</text>
+    </view>
+</view>

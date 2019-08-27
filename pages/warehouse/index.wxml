@@ -1,0 +1,17 @@
+<!-- <van-nav-bar bind:click-left="back" title="仓库" left-text="" fixed>
+    <van-icon name="arrow-left" slot="left" />
+</van-nav-bar> -->
+<view class="scroll-bg">
+    <x-scroll-view class="warehouse-bg" style="height: 100%" refreshing="{{loading}}" nomore="{{noMore}}"
+        bindpulldownrefresh="pullDownMethod" bindloadmore="pullUpMethod">
+        <block wx:for="{{dataInfo}}" wx:key="">
+            <warehouse-item data="{{item}}" imgUrl="{{imgUrl}}" bind:click="gotoDetail">
+                <view slot="phone-box" class="phone-box" data-phone="{{item.contractorPhone}}" catchtap="callToSeller">
+                    <image class="phone-img" src="/images/home/phone_icon.png"></image>
+                </view>
+            </warehouse-item>
+        </block>
+        <empty-data show="{{!dataInfo.length}}"></empty-data>
+    </x-scroll-view>
+</view>
+<suspend-button bindtap="addWarehouse" name="add-o" color="red"></suspend-button>

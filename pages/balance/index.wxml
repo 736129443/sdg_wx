@@ -1,0 +1,25 @@
+<!-- pages/balance/index.wxml -->
+<view class='balance'>
+  <scroll-view style="height:100%;" scroll-y="true" enable-back-to-top="true">
+    <image class="top-img" src="/images/personal/recharge_banner.png"></image>
+    <view wx:if="{{active != 0}}">
+      <view class="item-title">专属优惠</view>
+      <view class="discounts-bg">{{denominationList[active - 1].desc}}</view>
+    </view>
+    <view class="item-title">充值卡列表</view>
+    <view class="recharge-list-bg">
+      <block wx:for="{{denominationList}}" wx:key="{{index}}">
+        <view class="recharge-card-item {{active==index+1?'active-item':''}}" data-index="{{index+1}}" data-info="{{item}}" bindtap="selectItem">
+          充{{item.kindValue}}元
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+<view class="bottom-submit-bar">
+  <view class="price-text-bg">
+    ￥
+    <text class="price-value">{{money}}</text>
+  </view>
+  <view class="submit-btn" bindtap="recharge">去付款</view>
+</view>

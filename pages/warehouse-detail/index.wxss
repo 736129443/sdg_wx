@@ -1,0 +1,167 @@
+/* pages/warehouse-detail/index.wxss */
+page {
+  height   : 100%;
+  color    : rgba(0, 0, 0, .75);
+  font-size: 34rpx;
+}
+
+.warehouse-detail {
+  min-height: 100%;
+  width     : 100%;
+  background: #F4F4F4;
+  position  : relative;
+}
+
+.swiper_box {
+  width     : 100%;
+  height    : 450rpx;
+  box-sizing: border-box;
+}
+
+.swiper_box swiper-item .banners-item {
+  width : 100%;
+  height: 450rpx;
+}
+
+.back-bar {
+  position  : absolute;
+  left      : 0;
+  top       : 0;
+  padding   : 60rpx 10rpx 10rpx 20rpx;
+  box-sizing: border-box;
+}
+
+.back-bar image {
+  width : 40rpx;
+  height: 40rpx;
+}
+
+.pages {
+  position     : absolute;
+  top          : 320rpx;
+  right        : 50rpx;
+  background   : rgba(0, 0, 0, .2);
+  border-radius: 50rpx;
+  color        : white;
+  font-size    : 26rpx;
+  padding      : 0 16rpx;
+}
+
+.title-bar {
+  width         : 84%;
+  position      : absolute;
+  left          : 50%;
+  transform     : translate(-50%);
+  padding       : 30rpx 40rpx;
+  top           : 380rpx;
+  background    : white;
+  border-radius : 4rpx;
+  font-size     : 30rpx;
+  letter-spacing: 2rpx;
+}
+
+.title-bar-bg {
+  display        : flex;
+  justify-content: space-between;
+}
+
+.title-bar-address {
+  display    : inline-block;
+  line-height: 52rpx;
+  flex       : 1;
+}
+
+.title-bar-params {
+  display        : flex;
+  justify-content: space-between;
+  font-size      : 28rpx;
+  color          : #E42E25;
+  margin         : 20rpx 0 0 0;
+}
+
+.params {
+  text-align: center;
+}
+
+.params-content {
+  line-height: 55rpx;
+  color      : rgba(0, 0, 0, .45);
+}
+
+.address-bar {
+  background    : white;
+  padding       : 200rpx 40rpx 40rpx 40rpx;
+  font-size     : 28rpx;
+  letter-spacing: 2rpx;
+}
+
+.address-information {
+  padding: 0 20rpx;
+}
+
+.information text {
+  line-height: 55rpx;
+  color      : rgba(0, 0, 0, .45);
+}
+
+.information:last-of-type {
+  color: #2B7BC0;
+}
+
+.contacts-bar {
+  margin         : 36rpx 0 0 0;
+  padding        : 40rpx;
+  background     : rgba(0, 255, 0, .1);
+  display        : flex;
+  justify-content: space-between;
+}
+
+.contacts-bar-name view {
+  font-weight: bold;
+  color      : #3CBB50;
+}
+
+.contacts-bar-name text {
+  color    : rgba(0, 0, 0, .45);
+  font-size: 26rpx;
+}
+
+.van-button {
+  letter-spacing: 4rpx;
+}
+
+.information-bar {
+  padding       : 0 50rpx 40rpx 50rpx;
+  background    : white;
+  margin        : 20rpx 0;
+  letter-spacing: 2rpx;
+}
+
+.information-title {
+  font-weight: bold;
+  font-size  : 30rpx;
+  padding    : 30rpx 0 20rpx 0;
+}
+
+.information-content {
+  display        : flex;
+  justify-content: flex-start;
+  font-size      : 28rpx;
+}
+
+.information-content-left,
+.information-content-right {
+  width: 50%;
+}
+
+.information-content-left text,
+.information-content-right text,
+.information-content-single text {
+  color      : rgba(0, 0, 0, .45);
+  font-size  : 26rpx;
+  line-height: 50rpx;
+}
+
+.information-content-single {
+  width: 100%;
+}

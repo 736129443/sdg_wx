@@ -1,0 +1,11 @@
+<view class="scroll-bg">
+    <x-scroll-view class="scroll-view" style="height: 100%" refreshing="{{loading}}" nomore="{{true}}" bindpulldownrefresh="pullDownMethod">
+        <wxs module="filter" src="../../utils/filtter.wxs"></wxs>
+        <van-cell-group>
+            <van-cell wx:for="{{dataArray}}" wx:key="{{index}}" title="{{item.optContent}}" label="{{filter.getTimeString(item.createTime)}}">
+                <view class="value-bg add" wx:if="{{item.optMoney > 0}}">+{{item.optMoney}}</view>
+                <view class="value-bg reduce" wx:else>{{item.optMoney}}</view>
+            </van-cell>
+        </van-cell-group>
+    </x-scroll-view>
+</view>

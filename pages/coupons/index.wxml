@@ -1,0 +1,19 @@
+<common-nav title="我的券包"></common-nav>
+<view class="scroll-bg" style="top:{{navH}}px">
+    <van-tabs animated border="{{false}}" bind:change="onChange">
+        <block wx:for="{{tabArray}}" wx:key="">
+            <van-tab title="{{item.title}}">
+                <view class="scroll-inner-bg" style="height: {{scrollH}}" hover-class="none" hover-stop-propagation="false">
+                    <x-scroll-view refreshing="{{item.loading}}" style="height: 100%" nomore="{{item.noMore}}" bindpulldownrefresh="_onPullDownRefresh" bindloadmore="_onLoadmore">
+                        <block wx:for="{{item.infoArray}}" wx:key="{{subItem.id}}" wx:for-item="subItem" wx:for-index="subIndex">
+                            <view class="cell-bg">
+                                <common-coupon-item title="{{subItem.name}}" info="{{subItem}}" state="{{subItem.status}}" picUrl="{{imgUrl}}{{subItem.thumbnails}}" couponPrice="{{subItem.kindValue}}" limit="{{subItem.describe}}" bindusecoupon="useCoupon"></common-coupon-item>
+                            </view>
+                        </block>
+                        <empty-data show="{{!item.infoArray.length}}"></empty-data>
+                    </x-scroll-view>
+                </view>
+            </van-tab>
+        </block>
+    </van-tabs>
+</view>

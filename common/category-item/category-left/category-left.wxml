@@ -1,0 +1,10 @@
+<!--common/category-item/category-left/category-left.wxml-->
+ <scroll-view  class='left' scroll-y="true" scroll-into-view="{{categoryToView}}">
+    <block wx:for="{{categories}}" wx:key="id">
+      <view style='height:{{singleNavHeight}}px; line-height:{{singleNavHeight}}px' class="category-item {{categorySelected==item.scrollId?'category-item-active':''}}" data-id='{{[item.scrollId,item.id]}}' id='{{item.scrollId}}' bindtap='onCategoryClick' >
+        <text>{{item.name}}</text>
+        <view class='line'></view>
+      </view>
+    </block>
+      <slot />
+  </scroll-view>

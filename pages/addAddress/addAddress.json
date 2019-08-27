@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "新增地址",
+  "usingComponents": {
+    "van-button": "/vanUI/dist/button/index"
+  }
+}

@@ -1,0 +1,4 @@
+<van-popup show="{{ show }}" position="{{position}}" bind:close="openOrClosePopView">
+    <van-datetime-picker type="datetime" value="{{ value }}" min-date="{{ minDate }}" max-date="{{ maxDate }}"
+        bind:confirm="sureSelect" bind:cancel="openOrClosePopView" />
+</van-popup>

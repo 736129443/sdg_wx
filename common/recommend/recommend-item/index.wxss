@@ -1,0 +1,32 @@
+.bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+.bg .goods-img {
+  width: 100%;
+  height: 360rpx;
+}
+.bg .goods-title {
+  padding: 10rpx;
+  color: #333;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 16px;
+  max-height: 28px;
+  overflow: hidden;
+}
+.bg .price-bg {
+  display: inline-block;
+  color: red;
+  font-size: 12px;
+  padding: 10rpx;
+}
+.bg .price-bg .price-text {
+  font-size: 16px;
+}
+.bg .price-bg .spell-text {
+  margin-left: 10rpx;
+  color: #999;
+}

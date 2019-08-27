@@ -1,0 +1,8 @@
+<view class="card-box custom-class">
+    <view class="card-title">
+        {{title}}
+    </view>
+    <slot name="right-top-slot"></slot>
+    <view class="separation"></view>
+    <slot></slot>
+</view>

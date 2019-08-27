@@ -1,0 +1,8 @@
+<cover-view class="nav-head custom-class" style="{{'height:'+navigationBarHeight}}">
+    <cover-image class="back-img" wx:if="{{showBack}}" src="/images/back-icon.png" bindtap="back"></cover-image>
+    <cover-view class="title-area" bindtap="titleClick">
+        <cover-image class="loc-img" src="/images/loc-icon.png"></cover-image>
+        <cover-view class="head-text">{{title}}</cover-view>
+        <cover-view style="font-size: 18px;display:inline-block">▾</cover-view>
+    </cover-view>
+</cover-view>

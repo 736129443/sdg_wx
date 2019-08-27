@@ -1,0 +1,25 @@
+<!--pages/payment/index.wxml-->
+<view class='payment'>
+    <view class='payment-price-bar'>
+        <view>
+          需支付
+        </view> 
+        <view class='payment-price'>
+          ￥<text>{{price}}</text>  
+        </view>  
+    </view>
+    <form bind:submit="paymentOrder" report-submit="true">
+      <view class='payment-type-bar'>
+          <view class='payment-title'>支付方式:</view> 
+          <view class='payment-box'>
+              <view class='paymentList' data-item='{{item}}' data-index='{{index}}' wx:for='{{payment}}' wx:key='{{index}}' bindtap='payment'> 
+                  <view class='checke-box' >
+                    <image src='{{item.img}}'></image>{{item.name}}
+                    <icon type="{{actives==index? 'success' : 'circle'}}"  color="{{actives==index? 'red' : ''}}" size="20" ></icon> 
+              </view>
+              </view>
+        </view>  
+        <button class="to-pay-btn" type="warn" formType="submit"> <cover-view class='button'>去支付</cover-view></button>
+      </view>
+    </form>
+</view>

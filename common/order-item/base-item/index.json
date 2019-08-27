@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "van-tag": "/vanUI/dist/tag/index",
+        "address-item": "/common/order-item/address-item/index",
+        "van-button": "/vanUI/dist/button/index"
+    }
+}

@@ -1,0 +1,126 @@
+<!--pages/order-information/index.wxml-->
+<view  class='order-information'>
+  <view class='order-address-bar'>
+     <view class='order-item' wx:for="{{arr}}" wx:key="{{index}}">
+        <view class='order-img'>
+          <image src="{{index==0?'../../images/order-manager/ic_homepage_start.png':'../../images/order-manager/ic_homepage_last.png'}}"></image>
+        </view>
+       <view class='order-bar-content'>
+         <view class='order-bar-title'>{{item.addressName}}</view>
+         <view class='order-bar-text'>{{item.address}}</view>
+       </view>
+     </view>
+  </view>
+  <view class='order-setgoods-bar'>
+    <wxs module="fillter" src="../../utils/filtter.wxs"></wxs>
+     <van-cell is-link bind:click="openOrClosePopView">
+          <view slot="title">
+            <view class="van-cell-text">
+              <view class='name'>发货时间：</view>
+              <view class='text'>
+             {{fillter.getTimeString(globalTimestamp,'yyyy-MM-dd hh:mm')}}
+              </view>
+            </view>
+          </view>
+      </van-cell>
+      <van-cell is-link bind:click="toBack">
+          <view slot="title">
+            <view class="van-cell-text">
+              <view class='name'>货物类型：</view>
+              <view class='text'>
+              {{goods.type}}
+              </view>
+            </view>
+          </view>
+      </van-cell>
+      <van-cell is-link bind:click="toBack">
+          <view slot="title">
+            <view class="van-cell-text">
+              <view class='name'>货物重量：</view>
+              <view class='text'>
+                {{goods.weight.name}}
+              </view>
+            </view>
+          </view>
+      </van-cell>
+        <van-cell is-link bind:click="toBack" wx:if="{{isShowType}}">
+          <view slot="title">
+            <view class="van-cell-text">
+              <view class='name'>包装规格：</view>
+              <view class='text'>
+              {{goods.packaging.name}}
+              </view>
+            </view>
+          </view>
+      </van-cell>
+      <van-cell is-link bind:click="toBack" wx:if="{{!isShowType}}">
+          <view slot="title">
+            <view class="van-cell-text">
+              <view class='name'>货物件数：</view>
+              <view class='text'>
+              {{goods.piece}}
+              </view>
+            </view>
+          </view>
+      </van-cell>
+      <van-cell is-link bind:click="toBack" wx:if="{{!isShowType}}">
+          <view slot="title">
+            <view class="van-cell-text">
+              <view class='name'>货物体积：</view>
+              <view class='text'>
+              {{goods.volume}}
+              </view>
+            </view>
+          </view>
+      </van-cell>
+       <van-cell is-link bind:click="toBack">
+          <view slot="title">
+            <view class="van-cell-text">
+              <view class='name'>报价运费：</view>
+              <view class='text'>
+              {{goods.price}}
+              </view>
+            </view>
+          </view>
+      </van-cell>
+      <van-cell is-link bind:click="toBack">
+          <view slot="title">
+            <view class="van-cell-text">
+              <view class='name'>付款时间：</view>
+              <view class='text'>
+              {{goods.paymentTime.name}}
+              </view>
+            </view>
+          </view>
+      </van-cell>
+        <!-- <van-cell is-link bind:click="toBack">
+          <view slot="title">
+            <view class="van-cell-text">
+              <view class='name'>发货时间：</view>
+              <view class='text'>
+              {{goods.shipments.name}}
+              </view>
+            </view>
+          </view>
+      </van-cell> -->
+  </view>
+ <van-submit-bar
+  button-text="立即下单"
+  bind:submit="onClickButton"
+>
+  <view class='price'>
+        <view class='tops'>
+            <text class='tops-name'>预估价</text>              
+            <text class='tops-prices'>¥</text>
+            <text class='tops-price'>{{goods.price}}</text>
+        </view>
+         <view class='buttoms'>
+            <text>已抵扣卷{{ticketPrice}}元</text>
+        </view>
+  </view>
+</van-submit-bar>
+</view>
+<van-popup show="{{ popTimeView }}" position="bottom" bind:close="openOrClosePopView">
+    <van-datetime-picker type="datetime" value="{{ globalTimestamp}}" min-date="{{ globalTimestamp}}"
+        max-date="{{ maxDate }}" bind:confirm="sureSelect" bind:cancel="openOrClosePopView" />
+</van-popup>

@@ -1,0 +1,22 @@
+<view class="goods-box">
+    <x-image class="goods-img" src="{{picUrl}}" broken-image="/images/placeholder.png"></x-image>
+    <view class="goods-text-box">
+        <view class="goods-title">
+            <slot name="hot-icon"></slot>{{title}}
+        </view>
+        <slot name="red-border-label"></slot>
+        <van-row custom-class="bottom-box">
+            <van-col>￥</van-col>
+            <van-col style="font-size: 20px">{{price}}</van-col>
+            <van-col>
+                <text decode="{{true}}" wx:if="{{unit}}">
+                    &nbsp;/{{unit}}
+                </text>
+            </van-col>
+            <van-col>
+                <slot name="spell-number"></slot>
+            </van-col>
+        </van-row>
+    </view>
+    <slot name="phone-box"></slot>
+</view>

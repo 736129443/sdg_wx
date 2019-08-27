@@ -1,0 +1,94 @@
+/* pages/goods-information/index.wxss */
+page{
+  height: 100%;
+  color:rgba(0, 0, 0, .75);
+  font-size: 34rpx;
+}
+.goods-information{
+  min-height: 100%;
+  width: 100%;
+  background: #F4F4F4;
+  position: relative;
+  padding: 30rpx;
+  box-sizing: border-box;
+  letter-spacing: 2rpx;
+}
+.gooods-bar{
+  background: white;
+  padding: 20rpx 10rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid rgba(0, 0, 0, .15);
+  font-size:30rpx; 
+}
+.van-cell-texts{
+   background: #F4F4F4;
+   margin: 0 0 16rpx 16rpx;
+   min-width:100rpx;
+   text-align: center; 
+   height:60rpx;
+   line-height:60rpx;
+   padding: 0 10rpx;
+   box-sizing: border-box;
+   color       : rgba(0, 0, 0, .75);
+}
+.van-cell-box{
+  display: flex;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  flex-flow:row wrap;
+}
+view.active{
+  color:  #E83C38;
+  background: #FCE4E4;
+  box-sizing: border-box;
+  line-height:60rpx
+}
+view.active input{
+  background: #FCE4E4;
+  box-sizing: border-box;
+  line-height:60rpx;
+}
+
+.gooods-bar-title,.insurance-bar-title{
+    color       : rgba(0, 0, 0, .75);
+    margin: 20rpx 0 20rpx 20rpx ;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.insurance-bar{
+  background: white;
+  padding: 20rpx 20rpx  40rpx 20rpx ;
+  border-radius: 10rpx;
+  border: 2rpx solid rgba(0, 0, 0, .15);
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  align-items: center;
+  margin-top:20rpx;
+}
+.gooods-bar-title .text-color-price{
+  margin-left: 16rpx;
+  font-weight: normal;
+  color: rgba(0, 0, 0, .55);
+  font-size: 22rpx;
+  letter-spacing: 2rpx;
+}
+.gooods-bar-title .text-color{
+  color:#FF6600;
+  letter-spacing: 0;
+}
+.insurance-bar-text {
+  padding-left: 20rpx;
+  font-size: 28rpx;
+}
+.insurance-bar-text text{
+   color:  #E83C38;
+}
+.van-button {
+  margin-top: 30rpx;
+}

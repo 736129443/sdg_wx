@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "充值中心",
+  "usingComponents": {
+    "van-button": "/vanUI/dist/button/index",
+    "van-collapse": "/vanUI/dist/collapse/index",
+    "van-collapse-item": "/vanUI/dist/collapse-item/index"
+  }
+}

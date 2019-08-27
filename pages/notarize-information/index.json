@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+      "van-button": "/vanUI/dist/button/index",
+      "van-cell": "/vanUI/dist/cell/index",
+      "van-submit-bar": "/vanUI/dist/submit-bar/index",
+      "van-tag": "/vanUI/dist/tag/index",
+      "van-cell-group": "/vanUI/dist/cell-group/index",
+      "van-datetime-picker": "/vanUI/dist/datetime-picker/index"
+  },
+  "navigationBarTitleText": "确认订单"
+}

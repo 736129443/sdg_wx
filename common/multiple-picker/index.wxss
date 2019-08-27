@@ -1,0 +1,45 @@
+.bg {
+  height: 440rpx;
+  font-size: 14px;
+}
+.bg .top-tool-bg {
+  color: #46A3FF;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: .5px solid #eee;
+}
+.bg .top-tool-bg .top-btn {
+  display: inline-block;
+  padding: 20rpx;
+}
+.bg .select-btn-bg {
+  margin-top: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+.bg .select-btn-bg .select-btn {
+  width: 29%;
+  margin-bottom: 30rpx;
+  height: 70rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  line-height: 70rpx;
+  overflow: hidden;
+  border: 1px solid #46A3FF;
+  display: inline-block;
+}
+.bg .select-btn-bg .select-btn .text-label {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 35rpx;
+  text-overflow: ellipsis;
+}
+.bg .select-btn-bg .no-active {
+  color: #333;
+}
+.bg .select-btn-bg .active {
+  background: #46A3FF;
+  color: #fff;
+}

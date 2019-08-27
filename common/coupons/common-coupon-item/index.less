@@ -1,0 +1,173 @@
+.bg {
+    position: relative;
+
+    .coupon-bg {
+        border-radius  : 8rpx;
+        overflow       : hidden;
+        width          : 100%;
+        display        : flex;
+        align-items    : stretch;
+        font-size      : 14px;
+        justify-content: center;
+        color          : #333;
+
+        .left-view {
+            padding   : 20rpx;
+            flex      : 1;
+            background: #fff;
+
+            .goods-bg {
+                display    : flex;
+                align-items: stretch;
+
+                .goods-img {
+                    width : 160rpx;
+                    height: 160rpx;
+                }
+
+                .text-bg {
+                    margin-left    : 20rpx;
+                    font-size      : 14px;
+                    flex           : 1;
+                    display        : flex;
+                    flex-direction : column;
+                    justify-content: space-between;
+
+                    .title-text {
+                        font-weight: bold;
+                    }
+
+                    .old-price-bg {
+                        font-size: 12px;
+                        color    : #999;
+
+                        .old-price {
+                            text-decoration: line-through
+                        }
+                    }
+
+                    .new-price-bg {
+                        color: red;
+
+                        .new-price {
+                            font-size  : 14px;
+                            font-weight: bold;
+                        }
+                    }
+
+                    .limit-title-bg {
+                        font-size: 10px;
+                        padding  : 6rpx;
+                        position : relative;
+
+                        .icon-bg {
+                            display : inline-block;
+                            left    : 94rpx;
+                            top     : 10rpx;
+                            position: absolute;
+                        }
+
+                        .right-icon-extend {
+                            -webkit-transform: rotate(90deg);
+                            transform        : rotate(90deg);
+                            transition       : .3s;
+                        }
+
+                        .right-icon {
+                            -webkit-transform: rotate(-90deg);
+                            transform        : rotate(-90deg);
+                        }
+                    }
+                }
+            }
+
+            .process-bg {
+                display      : inline-block;
+                width        : 66%;
+                background   : #f2f2f2;
+                height       : 12rpx;
+                border-radius: 6rpx;
+                margin-right : 10rpx;
+
+                .used-bg {
+                    background   : red;
+                    height       : 100%;
+                    width        : 50%;
+                    border-radius: 6rpx;
+                }
+            }
+        }
+
+        .radius-img-bg {
+            width: 20rpx;
+
+            .radius-img {
+                width : 100%;
+                height: 100%;
+            }
+        }
+
+        .right-view {
+            width          : 160rpx;
+            background     : #fff;
+            color          : red;
+            display        : flex;
+            flex-direction : column;
+            align-items    : center;
+            justify-content: space-around;
+
+            .coupon-price-bg {
+                font-size: 12px;
+
+                .coupon-price {
+                    font-size  : 24px;
+                    font-weight: bold;
+                }
+            }
+
+            .coupon-condition {
+                margin-top: -50rpx;
+            }
+
+            .coupon-btn {
+                background   : orange;
+                border-radius: 8rpx;
+                color        : #fff;
+                width        : 80%;
+                height       : 66rpx;
+                font-size    : 12px;
+                line-height  : 66rpx;
+                text-align   : center;
+            }
+        }
+    }
+
+    .state-img {
+        position: absolute;
+        right   : 0;
+        top     : 0;
+        width   : 128rpx;
+        height  : 128rpx;
+    }
+
+    .extend-panel-bg {
+        font-size    : 12px;
+        background   : #fff;
+        border-radius: 8rpx;
+        margin-top   : 8rpx;
+        color        : #999;
+
+        .extend-panel-content {
+            padding   : 10rpx 30rpx;
+            transition: height .3s;
+        }
+    }
+
+    .panel-bg-extend {
+        height: auto;
+    }
+
+    .extend-panel-shrink {
+        height: 0;
+    }
+}

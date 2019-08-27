@@ -1,0 +1,10 @@
+<!--pages/supplyGoods/supplyGoods.wxml-->
+<view class='containers'>
+  <!-- <view  class='submit'>
+  <van-button  plain type="danger"  bind:click='submits'>增加商品</van-button>
+</view> -->
+  <category-list-right to-page='/pages/goods-detail/goods-detail' imgUrl="{{imgUrl}}" class='content'
+    big-phone='{{true}}' list='{{goods}}' bind:myClickPhone='myClickPhone' bind:myReachBottom="myReachBottom">
+  </category-list-right>
+</view>
+<suspend-button bindtap="addGoods" name="add-o" color="red"></suspend-button>

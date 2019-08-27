@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "常用地址",
+    "usingComponents": {
+        "van-button": "/vanUI/dist/button/index",
+        "van-field": "/vanUI/dist/field/index",
+        "van-cell-group": "/vanUI/dist/cell-group/index"
+    }
+}

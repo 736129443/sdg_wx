@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "发布仓库信息",
+    "usingComponents": {
+        "order-item": "/common/order-item/base-item/index",
+        "van-cell-group": "/vanUI/dist/cell-group/index",
+        "van-field": "/vanUI/dist/field/index",
+        "van-button": "/vanUI/dist/button/index",
+        "upload-image": "/common/images-upload/index",
+        "multiple-picker": "/common/multiple-picker/index"
+    }
+}

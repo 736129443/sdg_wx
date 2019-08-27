@@ -1,0 +1,34 @@
+.goods-box {
+  background-color: #fff;
+  width: 100%;
+  padding: 20rpx 30rpx;
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  margin-top: 4rpx;
+}
+.goods-box .goods-img {
+  height: 200rpx;
+  width: 200rpx;
+}
+.goods-box .goods-text-box {
+  display: inline-block;
+  position: relative;
+  margin-left: 30rpx;
+  height: 200rpx;
+  flex: 1;
+}
+.goods-box .goods-text-box .goods-title {
+  color: #333;
+  font-size: 15px;
+  line-height: 22px;
+}
+.goods-box .goods-text-box .bottom-box {
+  color: red;
+  font-size: 14px;
+  display: flex;
+  line-height: .5;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+}

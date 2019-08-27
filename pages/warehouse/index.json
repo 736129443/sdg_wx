@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "仓库",
+    "usingComponents": {
+        "warehouse-item": "/common/warehouse/warehouse-item/index",
+        "van-nav-bar": "/vanUI/dist/nav-bar/index"
+    }
+}

@@ -1,0 +1,62 @@
+<view class="input">
+  <input bindinput="bindKeyInput" bindblur="bindBlur" placeholder="输入城市名或拼音查询" placeholder-style="font-size: 30rpx" value="{{inputName}}"></input>
+</view>
+
+<view class="container-inner">
+  <view class="side-bar-letter-list touch-class">
+    <view class="side-bar-hot-city" bindtap="hotCity">
+      <view style="margin-top:0;">当前</view>
+      <view style="margin-top:0;">热门</view>
+    </view>
+    <view wx:for="{{sideBarLetterList}}" style="color:#8BC34A;font-size:20rpx;" wx:key="*this" data-letter="{{item.name}}" catchtouchend="touchSideBarLetter">{{item.name}}</view>
+  </view>
+  <view class="container">
+
+    <block wx:if="{{showChosenLetterToast}}">
+      <view class="show-chosen-letter">
+        {{toastShowLetter}}
+      </view>
+    </block>
+
+    <scroll-view scroll-y="true" style="height:{{winHeight}}px" bindscroll="bindScroll" scroll-into-view="{{scrollTopId}}" scroll-top="{{scrollTop}}">
+
+      <ul class="ul">
+        <li wx:for="{{completeList}}" wx:key="*this" bindtap="chooseCity" data-city="{{item.city}}" data-code="{{item.code}}" class="li">{{item.city}}</li>
+      </ul>
+
+      <view class="county-picker">
+        <view wx:if="{{showCountyPicker}}" class="county-picker-title">选择区县</view>
+        <view wx:if="{{showCountyPicker}}" class="county">
+          <block class="county-picker-list" wx:for-items="{{countyList}}" wx:key="id">
+            <view class="weui-grid" data-code="{{item.id}}" data-city="{{item.fullname}}" bindtap="chooseCounty">
+              <view class="weui-grid-label">{{item.fullname}}</view>
+            </view>
+          </block>
+        </view>
+      </view>
+
+      <view class="city-picker">
+        <view class="hotcity-common" bindtap="reGetLocation">点击定位城区</view>
+        <view class="current-city" data-city="{{city}}" data-code="{{currentCityCode}}" data-county="{{county}}">{{city}} {{county}}</view>
+
+        <view class="hotcity-common">热门城市</view>
+        
+        <view class="hot-city"  wx:key="initial">
+          <view wx:for="{{hotCityList}}" wx:key="cityCode">
+            <view class="weui-grid" data-code="{{item.cityCode}}" data-city="{{item.city}}" bindtap="chooseCity">
+              <view class="weui-grid-label">{{item.city}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="selection" wx:for="{{cityList}}" wx:key="initial">
+        <view class="item-letter" id="{{item.initial}}">{{item.initial}}</view>
+        <view class="item-city" wx:for="{{item.cityInfo}}" wx:for-item="ct" wx:key="id" data-code="{{ct.code}}" data-city="{{ct.city}}" bindtap="chooseCity">
+          {{ct.city}}
+        </view>
+      </view>
+
+    </scroll-view>
+  </view>
+</view>

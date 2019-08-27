@@ -1,0 +1,68 @@
+/* pages/search-detail/search-detail.wxss */
+
+page {
+  width : 100%;
+  height: 100%;
+}
+
+.search {
+  width     : 100%;
+  min-height: 100%;
+  font-size : 28rpx;
+  position  : relative;
+}
+
+.search-view {
+  box-shadow: 0px 2px 8px 0 #c8c8c8;
+}
+
+.hotSearch,
+.historySearch {
+  padding   : 0 28rpx;
+  box-sizing: border-box;
+  margin    : 20rpx 0;
+}
+
+.vanIcon {
+  position: relative;
+  top     : 10rpx;
+  color   : rgba(0, 0, 0, 0.75)
+}
+
+.historySearchTitle,
+.hotSearchTitle {
+  line-height    : 60rpx;
+  display        : flex;
+  justify-content: space-between;
+}
+
+.hotSearchListBox,
+.historySearchListBox {
+  display        : flex;
+  justify-content: flex-start;
+  flex-wrap      : wrap;
+}
+
+.hotSearchList,
+.historySearchList {
+  color        : rgba(0, 0, 0, 0.5);
+  border       : 2rpx solid rgba(0, 0, 0, 0.5);
+  border-radius: 6rpx;
+  padding      : 14rpx 26rpx;
+  text-align   : center;
+  margin       : 16rpx 10rpx 0 10rpx;
+}
+
+.active {
+  color : red;
+  border: 2rpx solid red;
+}
+
+.right-scroll-bg {
+  width   : 100%;
+  position: absolute;
+  top     : 108rpx;
+  left    : 0;
+  right   : 0;
+  bottom  : 0;
+}

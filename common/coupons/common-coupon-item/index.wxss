@@ -1,0 +1,145 @@
+.bg {
+  position: relative;
+}
+.bg .coupon-bg {
+  border-radius: 8rpx;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  font-size: 14px;
+  justify-content: center;
+  color: #333;
+}
+.bg .coupon-bg .left-view {
+  padding: 20rpx;
+  flex: 1;
+  background: #fff;
+}
+.bg .coupon-bg .left-view .goods-bg {
+  display: flex;
+  align-items: stretch;
+}
+.bg .coupon-bg .left-view .goods-bg .goods-img {
+  width: 160rpx;
+  height: 160rpx;
+}
+.bg .coupon-bg .left-view .goods-bg .text-bg {
+  margin-left: 20rpx;
+  font-size: 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.bg .coupon-bg .left-view .goods-bg .text-bg .title-text {
+  font-weight: bold;
+}
+.bg .coupon-bg .left-view .goods-bg .text-bg .old-price-bg {
+  font-size: 12px;
+  color: #999;
+}
+.bg .coupon-bg .left-view .goods-bg .text-bg .old-price-bg .old-price {
+  text-decoration: line-through;
+}
+.bg .coupon-bg .left-view .goods-bg .text-bg .new-price-bg {
+  color: red;
+}
+.bg .coupon-bg .left-view .goods-bg .text-bg .new-price-bg .new-price {
+  font-size: 14px;
+  font-weight: bold;
+}
+.bg .coupon-bg .left-view .goods-bg .text-bg .limit-title-bg {
+  font-size: 10px;
+  padding: 6rpx;
+  position: relative;
+}
+.bg .coupon-bg .left-view .goods-bg .text-bg .limit-title-bg .icon-bg {
+  display: inline-block;
+  left: 94rpx;
+  top: 10rpx;
+  position: absolute;
+}
+.bg .coupon-bg .left-view .goods-bg .text-bg .limit-title-bg .right-icon-extend {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition: .3s;
+}
+.bg .coupon-bg .left-view .goods-bg .text-bg .limit-title-bg .right-icon {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.bg .coupon-bg .left-view .process-bg {
+  display: inline-block;
+  width: 66%;
+  background: #f2f2f2;
+  height: 12rpx;
+  border-radius: 6rpx;
+  margin-right: 10rpx;
+}
+.bg .coupon-bg .left-view .process-bg .used-bg {
+  background: red;
+  height: 100%;
+  width: 50%;
+  border-radius: 6rpx;
+}
+.bg .coupon-bg .radius-img-bg {
+  width: 20rpx;
+}
+.bg .coupon-bg .radius-img-bg .radius-img {
+  width: 100%;
+  height: 100%;
+}
+.bg .coupon-bg .right-view {
+  width: 160rpx;
+  background: #fff;
+  color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.bg .coupon-bg .right-view .coupon-price-bg {
+  font-size: 12px;
+}
+.bg .coupon-bg .right-view .coupon-price-bg .coupon-price {
+  font-size: 24px;
+  font-weight: bold;
+}
+.bg .coupon-bg .right-view .coupon-condition {
+  margin-top: -50rpx;
+}
+.bg .coupon-bg .right-view .coupon-btn {
+  background: orange;
+  border-radius: 8rpx;
+  color: #fff;
+  width: 80%;
+  height: 66rpx;
+  font-size: 12px;
+  line-height: 66rpx;
+  text-align: center;
+}
+.bg .state-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 128rpx;
+  height: 128rpx;
+}
+.bg .extend-panel-bg {
+  font-size: 12px;
+  background: #fff;
+  border-radius: 8rpx;
+  margin-top: 8rpx;
+  color: #999;
+}
+.bg .extend-panel-bg .extend-panel-content {
+  padding: 10rpx 30rpx;
+  transition: height .3s;
+}
+.bg .panel-bg-extend {
+  height: auto;
+}
+.bg .extend-panel-shrink {
+  height: 0;
+}

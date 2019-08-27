@@ -1,0 +1,103 @@
+<!-- pages/add-goods/add-goods.wxml -->
+<view class='add-goods'>
+  <scroll-view style="height:100%" scroll-y="true" enable-back-to-top="true">
+    <van-search value="{{ value }}" bind:focus="focus" bind:change="search" placeholder="关键词搜索商品" show-action bind:search="search" bind:cancel="cancel" />
+    <cover-view class="black-bg" wx:if="{{showBack}}" bindtap="cancel">
+      <cover-view class="search-list-bg" wx:if="{{baseSearchList.length}}">
+        <cover-view catchtap="selectItem" data-info="{{item}}" class="search-item {{index==0?'none-boder':''}}" wx:for="{{baseSearchList}}" wx:key="{{index}}">
+          <cover-view class="item-text">{{item.name}}</cover-view>
+          <cover-view class="line"></cover-view>
+        </cover-view>
+      </cover-view>
+    </cover-view>
+    <van-cell>
+      <view slot="title">
+        <view class="van-cell-text">
+          <view class='variety'>商品名称</view>
+          <view class='input'>
+            <input type='text' bindinput="setGoodsName" value='{{goodsName}}' bindblur="blur" placeholder='请输入商品名称跟型号'></input>
+          </view>
+        </view>
+      </view>
+    </van-cell>
+    <van-cell>
+      <view slot="title">
+        <view class="van-cell-texts">
+          <view class='variety'>商品描述</view>
+          <view class='input'>
+            <textarea bindinput="setGoodsDetail" value='{{goodsDetail}}' maxlength='225' style='max-height:220rpx' placeholder='请输入商品具体名称跟型号'></textarea>
+          </view>
+        </view>
+      </view>
+    </van-cell>
+    <van-cell>
+      <view slot="title">
+        <view class="">
+          <upload add='{{add}}' up-width='{{214}}' up-height='{{214}}' close='{{close}}' bind:onchange='change' total='{{9}}'></upload>
+        </view>
+      </view>
+    </van-cell>
+    <picker bindchange="bindPickerChange" value="{{varietyIndex}}" range-key="name" range="{{varietyArray}}">
+      <van-cell is-link>
+        <view slot="title">
+          <view class="van-cell-text">
+            <text class='variety'>商品种类</text>
+            {{variety}}
+          </view>
+        </view>
+      </van-cell>
+    </picker>
+    <van-cell>
+      <view slot="title">
+        <view class="van-cell-text">
+          <view class='variety'>商品单价</view>
+          <view class='input price-input-bg'>
+            <text style="color: #333">￥</text>
+            <input class="price-input" type='text' value='{{price}}' bindinput="setPrice" placeholder='请输入商品单价'></input>
+          </view>
+        </view>
+      </view>
+    </van-cell>
+    <van-cell>
+      <view slot="title">
+        <view class="van-cell-text">
+          <view class='people'>联 系 人</view>
+          <view class='input'>
+            <input type='text' value='{{contacts}}' bindinput="setContacts" placeholder='请输入联系人'></input>
+          </view>
+        </view>
+      </view>
+    </van-cell>
+    <van-cell>
+      <view slot="title">
+        <view class="van-cell-text">
+          <view class='people'>联系电话</view>
+          <view class='input'>
+            <input type='text' value='{{phone}}' bindinput="setPhone" placeholder='请输入联系电话'></input>
+          </view>
+        </view>
+      </view>
+    </van-cell>
+    <picker bindchange="bindPackageChange" value="{{packageIndex}}" range-key="cname" range="{{packageArray}}">
+      <van-cell is-link>
+        <view slot="title">
+          <view class="van-cell-text">
+            <text class='variety'>打包方式</text>
+            {{packageWay}}
+          </view>
+        </view>
+      </van-cell>
+    </picker>
+    <van-cell is-link bind:click="gotoMap">
+      <view slot="title">
+        <view class="van-cell-text">
+          <text class='variety'>商品地址</text>
+          {{goodsAddress}}
+        </view>
+      </view>
+    </van-cell>
+    <view class='submit-box'>
+      <van-button size="large" type="danger" bind:click='submits'>确认发布</van-button>
+    </view>
+  </scroll-view>
+</view>

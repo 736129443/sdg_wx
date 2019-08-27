@@ -1,0 +1,215 @@
+<!-- <custom-nav custom-class="nav" showBack title="{{navTitle}}"></custom-nav> -->
+<view class="map_container">
+   <view class='default-box {{!isShowPopup?"":"hiddens"}}'>
+            <van-tabs active="{{ active }}" class="tab-one" bind:click="timeStateSwitch" >
+                <van-tab title="发整车"></van-tab>
+                <van-tab title="发零单"></van-tab>
+            </van-tabs>
+          <view class='open-car-bar'>
+              <view class="option-bg">
+                  <wxs module="fillter" src="../../utils/filtter.wxs"></wxs>
+                  <view class="time-select-bg" bindtap="openOrClosePopView">
+                      装货时间：{{fillter.getTimeString(appointmentTimestamp,'yyyy-MM-dd hh:mm')}}</view>
+                  <!-- <view class="common-btn" bindtap='commonAddress'>常用线路</view> -->
+                  <view class="car-type-select-bg" wx:if="{{isShowVehicleBox}}">
+                      <van-icon custom-class="switch-icon left" size="24px" name="arrow-left" color="#888" data-type="0"
+                          bind:click="switchTab"></van-icon>
+                      <van-tabs swipe-threshold="{{4}}" animated border="{{false}}" swipeable custom-class="tabs" active="{{active2}}" bind:change="selectCar">
+                          <block wx:for="{{carTypeList}}" wx:key="">
+                              <van-tab title="{{item.name}}">
+                                  <car-card item="{{item}}"></car-card>
+                              </van-tab>
+                          </block>
+                      </van-tabs>
+                      <van-icon custom-class="switch-icon right" size="24px" name="arrow" color="#888" data-type="1"
+                          bind:click="switchTab"></van-icon>
+                  </view>
+                  <view class="address-select-bg">
+                      <address-cell value="{{startAddress.address}}" placeholder="请选择出货地址"
+                          src="/images/map/ic_homepage_contacts.png" data-index="99" bindimgevent="editAddressInfo"
+                          bindcellevent="cellClick">
+                      </address-cell>
+                      <image animation="{{imgAnimationData}}" class="change-img" mode="aspectFit"
+                          wx:if="{{siteArray.length==0&&secondAddress}}" src="/images/map/homepage_ic_change.png"
+                          bindtap="changeAddress">
+                      </image>
+                      <address-cell value="{{secondAddress.address}}" placeholder="请选择收货地址" icon="add-o"
+                          src="/images/map/ic_homepage_contacts.png" data-index="0" status="1" bindimgevent="editAddressInfo"
+                          bindiconevent="addAddress" bindcellevent="cellClick">
+                      </address-cell>
+
+                      <block wx:for="{{siteArray}}" wx:key="">
+                          <address-cell value="{{item.address}}" placeholder="请选择收货地址" icon="clear"
+                              src="/images/map/ic_homepage_contacts.png" status="1" data-index="{{index+1}}"
+                              bindimgevent="editAddressInfo" bindiconevent="deleteAddress" bindcellevent="cellClick">
+                          </address-cell>
+                      </block>
+                  </view>
+                  <view class="auto-price" bindtap="toPriceDetail" wx:if="{{isShowPredictBox}}" >
+                      <text>预计:<text class='price'>{{futurePrices}}</text>元 <text class='price-detail'>></text></text>
+                  </view>
+                  <view class="next-btn-bg" wx:if="{{isShowButton}}" >
+                      <van-button type="danger" block bind:click="toNextPage" >下一步</van-button>
+                  </view>
+              </view>  
+            </view>
+            <view class='goods-infomation' wx:if="{{isShowGoodBox}}">
+              <!-- <van-cell value="{{carClaimStr==''?'请选择车辆要求':carClaimStr}}" is-link  bind:click="carClaim">
+                  <view slot="title">
+                    <view class="infomation-title">车辆要求</view>
+                  </view>
+               </van-cell> -->
+               <van-cell value="{{goodsInfomation==null?'请选择货物信息':''}}" bind:click="toNextPage" is-link>
+                  <view slot="title">
+                    <view class="infomation-title">货物信息</view>
+                    <view class="infomation-content">
+                      <text>{{goodsInfomation==null?'暂无信息':''}}</text>
+                      <text>{{goodsInfomation.goodsTypeVal}}</text>
+                      <text>{{goodsInfomation.weightVal.name}}</text>
+                      <text>{{goodsInfomation.packVal.name}}</text>
+                    </view>
+                  </view>
+               </van-cell>
+              <van-cell bind:click="toNextPage"  value="{{goodsInfomation==null?'请选择付款时间':goodsInfomation.paymentTime.name}}" is-link>
+                  <view slot="title">
+                    <view class="infomation-title">付款时间</view>
+                  </view>
+              </van-cell>
+              <view class='goods-cell' wx:if="{{!isShowPredictBox}}">
+                  <view class="goods-cell-title">运费报价</view>
+                   <view class="goods-cell-content">
+                    <text>推荐价格:<text class='text-color'>{{futurePrices}}</text>元</text><input class="priceInput" type='digit' value="{{recomPrice}}" bindinput='setPrice'></input> 元
+                   </view> 
+              </view>
+              <view class='insurance-bar'  catchtap='selectProduct'>
+                <view class='insurance-bar-left'>
+                    <view class='insurance-bar-title'>报价服务</view>
+                    <view class='insurance-bar-text'>
+                        购买畅心保 <text catchtap="toPage">《闪电狗畅心包》</text>
+                    </view>
+                </view>
+                <view class='insurance-bar-left'>
+                    <icon color="{{iconActive? 'red' : ''}}" type="{{iconActive ? 'success' : 'circle'}}"  size="20"></icon>
+                </view>
+              </view>
+              <view class="next-btn-bg">
+                      <van-button type="danger" block bind:click="toPages" >下一步</van-button>
+              </view>
+            </view>
+            <!-- <view class='underway-car-bar'>
+                <view class='underway-car-title'>进行中的订单 {{kilometre}}
+                </view>
+                <block wx:for-item="obj" wx:key="index" wx:for="{{infoArray}}">
+                                  <order-item isAppointment status="{{obj.status}}" bind:myevent="bottomBtnMethod"></order-item>
+                  </block>
+            </view> -->
+    </view>
+
+    <view class='map-content {{isShowPopup?"shows":""}}'>
+      <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" markers="{{markers}}" show-location >
+        <cover-view class="popview-bg"></cover-view>
+      </map>
+      <view class='content-box'>
+            <view class='content-item' data-index="popup" bindtap='cellClick'>
+                <view class='contet-img'>
+                   <image  src='../../images/map/ic_pagehome_district_normal.png'></image>
+                </view>
+                <view class='contet-text'>
+                    <view>{{user.addressName==undefined?'请选择地址':user.addressName}}</view>
+                    <view class='content-address-detail'>{{user.address==undefined?'请选择地址':user.address}}</view>
+                </view>
+            </view>
+             <view class='content-item'>
+                <view class='contet-img'>
+                   <image  src='../../images/map/ic_pagehome_building_normal.png'></image>
+                </view>
+               <van-field
+                    value="{{user.number}}"
+                    placeholder="街道、楼牌号（可不填）"
+                    border="{{ false }}"
+                    bind:change="onChangeNumber"
+                />
+            </view>
+             <view class='content-item'>
+                <view class='contet-img'>
+                   <image  src='../../images/map/ic_pagehome_user_normal.png'></image>
+                </view>
+               <van-field
+                    value="{{ user.contractor}}"
+                    placeholder="联系人姓名（可不填）"
+                    border="{{ false }}"
+                    bind:change="onChangeName"
+                />
+            </view>
+              <view class='content-item'>
+                <view class='contet-img'>
+                   <image  src='../../images/map/ic_pagehome_call_normal.png'></image>
+                </view>
+               <van-field
+                    type="number"
+                    value="{{ user.phone }}"
+                    placeholder="联系电话 (必填)"
+                    border="{{ false }}"
+                    bind:change="onChangePhone"
+                />
+            </view>
+            <van-button size="large" bind:click="sunbmits" type="danger">确定</van-button>
+      </view>
+  </view>
+</view>
+
+<multiple-picker show="{{showMultiple}}" info-array="{{multipleData}}" flag="{{flag}}"
+      default-str="{{defaultMultipleStr}}" bindsure="multipleSure">
+</multiple-picker>
+<van-popup show="{{ popTimeView }}" position="bottom" bind:close="openOrClosePopView">
+    <van-datetime-picker type="datetime" value="{{ appointmentTimestamp }}" min-date="{{ minDate }}"
+        max-date="{{ maxDate }}" bind:confirm="sureSelect" bind:cancel="openOrClosePopView" />
+</van-popup>
+
+  <!-- <view class='popup' wx:if="{{false}}" catchtouchmove='{{true}}'  style='height:{{windowHeight}}px;width:{{windowWidth}}px'>
+       <view class='content' >
+            <view class='content-item' data-index="popup" bindtap='cellClick'>
+                <view class='contet-img'>
+                   <image  src='../../images/map/ic_pagehome_district_normal.png'></image>
+                </view>
+                <view class='contet-text'>
+                    <view>{{user.addressName==undefined?'请选择地址':user.addressName}}</view>
+                    <view class='content-address-detail'>{{user.address==undefined?'请选择地址':user.address}}</view>
+                </view>
+            </view>
+             <view class='content-item'>
+                <view class='contet-img'>
+                   <image  src='../../images/map/ic_pagehome_building_normal.png'></image>
+                </view>
+               <van-field
+                    value="{{user.number}}"
+                    placeholder="街道、楼牌号（可不填）"
+                    border="{{ false }}"
+                    bind:change="onChangeNumber"
+                />
+            </view>
+             <view class='content-item'>
+                <view class='contet-img'>
+                   <image  src='../../images/map/ic_pagehome_user_normal.png'></image>
+                </view>
+               <van-field
+                    value="{{ user.name}}"
+                    placeholder="联系人姓名（可不填）"
+                    border="{{ false }}"
+                    bind:change="onChangeName"
+                />
+            </view>
+              <view class='content-item'>
+                <view class='contet-img'>
+                   <image  src='../../images/map/ic_pagehome_call_normal.png'></image>
+                </view>
+               <van-field
+                    value="{{ user.phone }}"
+                    placeholder="联系电话"
+                    border="{{ false }}"
+                    bind:change="onChangePhone"
+                />
+            </view>
+            <van-button size="large" bind:click="sunbmits" type="danger">确定</van-button>
+       </view>
+  </view> -->

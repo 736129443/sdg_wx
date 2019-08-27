@@ -1,0 +1,16 @@
+<van-popup show="{{ show }}" position="bottom" close-on-click-overlay="{{false}}">
+    <view class="bg">
+        <view class="top-tool-bg">
+            <label class="top-btn" bindtap="cancalMethod">取消</label>
+            <label class="top-btn" bindtap="sure">确定</label>
+        </view>
+        <view class="select-btn-bg">
+            <block wx:for="{{orginArray}}" wx:key="">
+                <view class="select-btn {{item.value ? 'active' : 'no-active'}}" bindtap="selectOrCancal"
+                    data-index="{{index}}">
+                    <label class="text-label">{{item.name}}</label>
+                </view>
+            </block>
+        </view>
+    </view>
+</van-popup>

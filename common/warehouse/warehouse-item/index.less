@@ -1,0 +1,47 @@
+.warehouse-box {
+    background-color: #fff;
+    width           : 100%;
+    padding         : 20rpx 30rpx;
+    position        : relative;
+    display         : flex;
+    box-sizing      : border-box;
+    margin-top      : 4rpx;
+
+    .warehouse-img {
+        height: 180rpx;
+        width : 180rpx;
+    }
+
+    .warehouse-text-box {
+        display        : inline-flex;
+        position       : relative;
+        flex-direction : column;
+        justify-content: space-between;
+        margin-left    : 30rpx;
+        flex           : 1;
+
+        .warehouse-title {
+            color      : #333;
+            font-size  : 15px;
+            line-height: 22px;
+        }
+
+        .sub-info-bg {
+            color      : #666;
+            font-size  : 14px;
+            line-height: 20px;
+
+            label {
+                display: block;
+            }
+        }
+
+        .bottom-box {
+            color      : red;
+            font-size  : 20px;
+            display    : flex;
+            line-height: .5;
+            align-items: flex-end;
+        }
+    }
+}

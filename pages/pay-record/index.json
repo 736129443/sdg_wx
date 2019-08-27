@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "账单明细",
+    "usingComponents": {
+        "van-cell": "/vanUI/dist/cell/index",
+        "van-cell-group": "/vanUI/dist/cell-group/index"
+    }
+}

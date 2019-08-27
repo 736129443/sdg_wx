@@ -1,0 +1,15 @@
+<view class='up-pic'>
+  <view class='flex pic-box'>
+    <block wx:key="imgbox" wx:for="{{imgbox}}">
+      <view class='add-pic' style='height:{{imgH}}px'>
+        <image bindtap='showImg' class="pic-item" data-index="{{index}}" src='{{item}}'></image>
+        <view class='img-de' data-deindex='{{index}}' bindtap='imgDelete'>
+          <image mode="scaleToFill" class='img' src='/images/img-close.png'></image>
+        </view>
+      </view>
+    </block>
+    <view class='add-pic' bindtap='addPic' style='height:{{imgH}}px' wx:if="{{imgbox.length<total}}">
+      <image class="pic-item" src='{{add}}'></image>
+    </view>
+  </view>
+</view>

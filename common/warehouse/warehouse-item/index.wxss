@@ -1,0 +1,41 @@
+.warehouse-box {
+  background-color: #fff;
+  width: 100%;
+  padding: 20rpx 30rpx;
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  margin-top: 4rpx;
+}
+.warehouse-box .warehouse-img {
+  height: 180rpx;
+  width: 180rpx;
+}
+.warehouse-box .warehouse-text-box {
+  display: inline-flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 30rpx;
+  flex: 1;
+}
+.warehouse-box .warehouse-text-box .warehouse-title {
+  color: #333;
+  font-size: 15px;
+  line-height: 22px;
+}
+.warehouse-box .warehouse-text-box .sub-info-bg {
+  color: #666;
+  font-size: 14px;
+  line-height: 20px;
+}
+.warehouse-box .warehouse-text-box .sub-info-bg label {
+  display: block;
+}
+.warehouse-box .warehouse-text-box .bottom-box {
+  color: red;
+  font-size: 20px;
+  display: flex;
+  line-height: .5;
+  align-items: flex-end;
+}

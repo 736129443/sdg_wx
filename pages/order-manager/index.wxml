@@ -1,0 +1,16 @@
+<view class="container">
+    <van-tabs style="width:100%" animated active="{{ active }}" bind:change="onChange">
+        <block wx:for="{{tabArray}}" wx:key="">
+            <van-tab title="{{item.title}}">
+                <view class="" style="height:{{scrollH}}px">
+                    <x-scroll-view class="content-scroll-view" style="height: 100%" refreshing="{{item.loading}}" nomore="{{item.noMore}}" bindpulldownrefresh="pullDownMethod" bindloadmore="pullUpMethod">
+                        <block wx:for-item="obj" wx:key="" wx:for="{{item.infoArray}}">
+                            <order-item isAppointment info="{{obj}}" bind:myevent="bottomBtnMethod" bind:itemclick="toDetail"></order-item>
+                        </block>
+                        <empty-data show="{{!item.infoArray.length}}"></empty-data>
+                    </x-scroll-view>
+                </view>
+            </van-tab>
+        </block>
+    </van-tabs>
+</view>

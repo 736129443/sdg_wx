@@ -1,0 +1,114 @@
+page {
+    height: 100%;
+}
+
+.container {
+    min-height     : 100%;
+    overflow-y     : hidden;
+    background     : #f2f2f2;
+    position       : relative;
+    justify-content: flex-start;
+
+    .personal-bg-img {
+        display : block;
+        height  : 320rpx;
+        width   : 750rpx;
+        position: relative;
+
+        .userinfo-bg {
+            position   : absolute;
+            left       : 0;
+            right      : 0;
+            bottom     : 0;
+            top        : 0;
+            display    : flex;
+            align-items: center;
+
+            .user-avatar {
+                height       : 100rpx;
+                width        : 100rpx;
+                border-radius: 54rpx;
+                border       : 2rpx #fff solid;
+                margin-left  : 30rpx;
+            }
+
+            .userinfo-text-bg {
+                margin-left   : 30rpx;
+                display       : inline-flex;
+                flex-direction: column;
+                color         : #fff;
+                font-size     : 15px;
+
+                .integral-text {
+                    display      : inline-block;
+                    padding      : 0 6px;
+                    border-radius: 12px;
+                    font-size    : 12px;
+                    width        : fit-content;
+                    background   : rgba(0, 0, 0, .2);
+                }
+            }
+        }
+    }
+
+    .money-card-box {
+        height       : 100rpx;
+        left         : 30rpx;
+        right        : 30rpx;
+        top          : 270rpx;
+        position     : absolute;
+        border-radius: 26rpx;
+        background   : #fff;
+        display      : flex;
+        align-items  : center;
+
+        .wallet-btn {
+            border-right: 2rpx #e5e5e5 solid;
+        }
+
+        .button {
+            flex           : 1;
+            height         : 50%;
+            display        : flex;
+            justify-content: center;
+            color          : #333;
+            font-size      : 14px;
+            align-items    : center;
+
+            .btn-img {
+                width  : 38rpx;
+                height : 38rpx;
+                display: inline-block;
+            }
+
+            .btn-title {
+                margin-left: 16rpx;
+                display    : inline-block;
+            }
+        }
+    }
+
+    .order-list-box {
+        margin-top: 70rpx;
+        width     : 750rpx - 60rpx;
+        overflow  : hidden;
+
+        .all-order-btn {
+            color    : #888;
+            font-size: 14px;
+            display  : inline-block;
+            float    : right;
+            padding  : 26rpx 30rpx;
+        }
+
+        .order-list {
+            clear          : both;
+            background     : #fff;
+            display        : flex;
+            flex-wrap      : wrap;
+            padding        : 20rpx;
+            justify-content: space-around;
+        }
+
+    }
+}

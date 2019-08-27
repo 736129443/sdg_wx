@@ -1,0 +1,7 @@
+{
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "card": "/common/card/index",
+        "card-item": "/common/card-item/index"
+    }
+}

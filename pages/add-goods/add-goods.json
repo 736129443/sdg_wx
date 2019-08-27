@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "新增商品",
+  "disableScroll": true,
+  "usingComponents": {
+    "van-cell": "/vanUI/dist/cell/index",
+    "van-cell-group": "/vanUI/dist/cell-group/index",
+    "upload": "/common/images-upload/index",
+    "van-button": "/vanUI/dist/button/index",
+    "van-search": "/vanUI/dist/search/index"
+  }
+}

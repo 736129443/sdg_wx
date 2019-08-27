@@ -1,0 +1,19 @@
+<view class="page-bg" style="top:{{navH}}px">
+    <view class="search-view">
+        <view class="search-field">
+            <van-field bind:change="search" left-icon="search" placeholder="请输入地址" border="{{false}}"></van-field>
+        </view>
+        <view class="lines"></view>
+        <view class="cancel-button" bindtap="back">取消</view>
+    </view>
+    <scroll-view class="pois-list-bg" scroll-y="false" enable-back-to-top="false">
+        <view class="cell-bg" wx:for="{{poisList}}" wx:key="" data-index="{{index}}" bindtap="cellSelect">
+            <van-icon custom-style="margin-left:15px" name="location" size="16px" color="#666"></van-icon>
+            <view class="text-info-bg">
+                <van-cell-group>
+                    <van-cell title="{{item.name}}" label="{{item.address}}" />
+                </van-cell-group>
+            </view>
+        </view>
+    </scroll-view>
+</view>

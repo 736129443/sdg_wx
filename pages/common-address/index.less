@@ -1,0 +1,76 @@
+page {
+    height    : 100%;
+    background: #f2f2f2;
+}
+
+@addBtnH :100rpx;
+
+.bg {
+    height   : calc(~ "100% - @{addBtnH}");
+    width    : 100%;
+    color    : #333;
+    font-size: 14px;
+
+
+
+    .item-bg {
+        padding-top: 14rpx;
+
+        .item {
+            padding   : 20rpx 30rpx;
+            background: #fff;
+            margin-top: 2rpx;
+        }
+
+        .item-top {
+            position: relative;
+
+            .tag {
+                position: absolute;
+                right   : 30rpx;
+                top     : 22rpx;
+            }
+        }
+
+        .item-mid {
+            margin-top    : 0;
+            padding       : 0 30rpx;
+            padding-bottom: 10rpx;
+            color         : #666;
+        }
+
+        .item-bottom {
+            padding       : 0 30rpx;
+            display       : flex;
+            flex-direction: row-reverse;
+
+            .bottom-btn {
+                display: flex;
+                padding: 8rpx;
+                color  : #999;
+
+                label {
+                    padding: 6rpx 10rpx;
+                }
+            }
+        }
+    }
+}
+
+.add-address-btn-bg {
+    background : red;
+    color      : #fff;
+    font-size  : 14px;
+    height     : @addBtnH;
+    position   : fixed;
+    bottom     : 0;
+    width      : 100%;
+    text-align : center;
+    line-height: 90rpx;
+}
+
+.pop-bg {
+    padding      : 20rpx;
+    background   : #fff;
+    border-radius: 8rpx;
+}

@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "van-field": "/vanUI/dist/field/index",
+        "van-cell-group": "/vanUI/dist/cell-group/index"
+    }
+}

@@ -1,0 +1,23 @@
+<!--common/category-item/category-right/category-right.wxml-->
+<scroll-view  class='right' scroll-y="true" scroll-into-view="{{goodsToView}}" bindscroll="scroll">
+    <slot></slot> 
+    <block wx:for="{{goodsWrap}}" wx:key="id">
+      <view class="goodsWrap-category" id='{{item.scrollId}}'>
+        <text>{{item.name}}</text>
+      </view>
+      <block wx:for="{{item.goods}}" wx:for-item="goods" wx:key="id">
+        <view class='goods-item' bindtap="toDetailsTap" data-id="{{goods.id}}">
+          <view class='goods-pics'>
+            <image class='goods-pic' mode='aspectFill' lazy-load="true" src="{{goods.pic}}_m"></image>
+          </view>
+          <view class='goods-info'>
+            <view class='goods-content-lable'>
+              <view class='goods-content'><view class='hots'>热卖</view>{{goods.name}}</view> 
+              <view class='goods-label'><view  class='border-box'>雅塔区</view > <view   class='border-box'>平台无忧购</view > </view>
+            </view>
+            <view class='goods-content-button'> <text class='goods-money'>￥</text>{{goods.minPrice}}/箱 <text class='size-p'>已拼999人</text> <image mode='aspectFill' lazy-load="true" src="/images/home/phone_icon.png"></image></view>
+          </view>
+        </view>
+      </block>
+    </block> 
+  </scroll-view>

@@ -1,0 +1,37 @@
+<!--pages/goods-information/index.wxml-->
+<view  class='goods-information'>
+  <view class='gooods-bar'>
+    <view class='gooods-bar-title'>货物类型</view>
+    <view class='van-cell-box'>
+   <view class="van-cell-texts {{activeT==index? 'active' : ''}}"  bindtap='selectGoodsType' data-item="{{item}}" data-index='{{index}}' wx:for="{{arr}}" wx:key="{{index}}">{{arr.length-1==index?"":item.name}}
+        <input style='max-width:180rpx;' bindinput="selectInput" value="{{ item.name }}" wx:if="{{arr.length-1==index?true:false}}"  type='text' placeholder="其他"></input>
+      </view>
+    </view>
+    <view class='gooods-bar-title'>单件重量</view>
+    <view class='van-cell-box'>
+      <view class="van-cell-texts {{activeW==index? 'active' : ''}}"  bindtap='selectGoodsWeight' data-item="{{item}}"  data-index='{{index}}' wx:for="{{arr2}}" wx:key="{{index}}">{{item.name==''?'无':item.name}}</view>
+    </view>
+    <view class='gooods-bar-title'>包装规格</view>
+    <view class='van-cell-box'>
+      <view class="van-cell-texts {{activeP==index? 'active' : ''}}"  bindtap='selectGoodsPack' data-item="{{item}}"   data-index='{{index}}' wx:for="{{arr3}}" wx:key="{{index}}">{{item.name==''?'无':item.name}}</view>
+    </view>
+    <view class='gooods-bar-title'>选择付款时间</view>
+    <view class='van-cell-box'>
+      <view class="van-cell-texts {{activeTI==index? 'active' : ''}}"  bindtap='selectPaymentTime' data-item="{{item}}" data-index='{{index}}' wx:for="{{arr4}}" wx:key="{{index}}">{{item.name}}
+      </view>
+    </view>
+  </view>
+
+   <!-- <view class='insurance-bar'  catchtap='selectProduct'>
+     <view class='insurance-bar-left'>
+        <view class='insurance-bar-title'>报价服务</view>
+        <view class='insurance-bar-text'>
+            购买畅心保 <text catchtap="toPages">《闪电狗畅心包》</text>
+        </view>
+    </view>
+     <view class='insurance-bar-left'>
+        <icon color="{{iconActive? 'red' : ''}}" type="{{iconActive ? 'success' : 'circle'}}"  size="20"></icon>
+    </view>
+    </view> -->
+     <van-button size="large" type="danger"  bind:click='toPages'>确认</van-button>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-button": "/vanUI/dist/button/index",
+    "van-field": "/vanUI/dist/field/index"
+  },
+  "navigationBarTitleText": "请选择货物信息"
+}

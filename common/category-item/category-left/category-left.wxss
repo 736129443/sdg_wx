@@ -1,0 +1,42 @@
+/* common/category-item/category-left/category-left.wxss */
+.left{ 
+  height: 100%;
+}
+category-left{
+  width:22%;
+  height:100%;
+  letter-spacing: 2rpx;
+  /* min-width: 200rpx; */
+  background-color:#F4F4F4;
+  box-sizing:border-box;
+  /* border-right:2rpx solid rgba(0,0,0,.02); */
+}
+.category-item {
+  width:100%;
+  text-align: center;
+  box-sizing: border-box;
+  /* transition:0.2s all; */
+  border-left:8rpx solid #F4F4F4;
+}
+.line{
+  position: relative;
+  width:84%;
+  margin: 0 auto;
+}
+.category-item-active {
+  border-left:8rpx solid #E01C18;
+  color: #E01C18;
+  background-color: white;
+}
+.line::after { 
+  content: '';
+  position: absolute;  /* 把父视图设置为relative，方便定位*/
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid rgba(0,0,0,0.06);
+}

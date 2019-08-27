@@ -1,0 +1,75 @@
+/* pages/balance/index.wxss */
+page {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+}
+.balance {
+  width: 100%;
+  height: calc(100% - 60px);
+  background-color: #f5f5f5;
+  color: #333;
+}
+.balance .top-img {
+  width: 100%;
+  height: 400rpx;
+}
+.balance .recharge-list-bg {
+  padding: 40rpx 40rpx 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.balance .recharge-list-bg .recharge-card-item {
+  border-radius: 20rpx;
+  width: 44%;
+  height: 60px;
+  margin-bottom: 30rpx;
+  text-align: center;
+  line-height: 60px;
+  border: 4rpx solid #ee5535;
+}
+.balance .recharge-list-bg .active-item {
+  border: none;
+  color: #fff;
+  background: #ee5535;
+}
+.balance .item-title {
+  font-size: 16px;
+  padding: 20rpx 40rpx 0;
+}
+.balance .discounts-bg {
+  padding: 10rpx 40rpx;
+}
+.bottom-submit-bar {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.bottom-submit-bar .price-text-bg {
+  background: #fff;
+  flex: 1;
+  height: 100%;
+  border-top: 2rpx solid #eee;
+  color: #999;
+  padding: 30rpx;
+}
+.bottom-submit-bar .price-text-bg .price-value {
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+}
+.bottom-submit-bar .submit-btn {
+  background: #ee5535;
+  height: 100%;
+  width: 200rpx;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  line-height: 60px;
+}

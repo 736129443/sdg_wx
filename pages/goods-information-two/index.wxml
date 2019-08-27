@@ -1,0 +1,69 @@
+<!--pages/goods-information/index.wxml-->
+<view  class='goods-information'>
+  <view class='gooods-bar'>
+    <view class='gooods-bar-title'>货物类型</view>
+    <view class='van-cell-box'>
+      <view class="van-cell-texts {{activeT==index? 'active' : ''}}"  bindtap='selectGoodsType' data-item="{{item}}" data-index='{{index}}' wx:for="{{arr}}" wx:key="{{index}}">{{arr.length-1==index?"":item.name}}
+        <input style='max-width:180rpx;' bindinput="selectInput" value="{{ item.name }}" wx:if="{{arr.length-1==index?true:false}}"  type='text' placeholder="其他"></input>
+      </view>
+    </view>
+     <view class='gooods-bar-title'>
+        <view class='gooods-bar-name'>货物件数</view>  
+        <van-field
+          value="{{ pieceVal }}"
+          placeholder="请输入件数"
+          bind:change="onChangePiece"
+          type="number"
+          placeholder-style="font-size:26rpx;color:rgba(0,0,0,.4)"
+          style="width:240rpx;"
+        />
+        件
+     </view>
+     <view class='gooods-bar-title'>
+        <view class='gooods-bar-name'>货物体积</view>  
+        <van-field
+          value="{{ volumeVal }}"
+          placeholder="请输入体积"
+          bind:change="onChangeVolume"
+          placeholder-style="font-size:26rpx;color:rgba(0,0,0,.4)"
+          type="digit"
+          style="width:240rpx;"
+        />
+        m³
+     </view>
+    <view class='gooods-bar-title'>货物重量</view>
+    <view class='van-cell-box'>
+      <view class="van-cell-texts {{activeW==index? 'active' : ''}}"  bindtap='selectGoodsWeight' data-item="{{item}}" data-index='{{index}}' wx:for="{{arr2}}" wx:key="{{index}}">{{item.name==''?'无':item.name}}</view>
+    </view>
+      <view class='gooods-bar-title'>
+        <view class='gooods-bar-name'>运费报价</view>  
+        <van-field
+          value="{{ priceVal }}"
+          placeholder="请输入报价"
+          bind:change="onChangeOffer"
+          placeholder-style="font-size:26rpx;color:rgba(0,0,0,.4)"
+          type="digit"
+          style="width:200rpx;"
+        />
+        元
+        <text class='text-color-price'>推荐价格:<text class='text-color'>{{futurePrices}}</text>元</text>
+      </view>
+    <view class='gooods-bar-title'>选择付款时间</view>
+    <view class='van-cell-box'>
+      <view class="van-cell-texts {{activeTI==index? 'active' : ''}}"  bindtap='selectPaymentTime' data-item="{{item}}" data-index='{{index}}' wx:for="{{arr3}}" wx:key="{{index}}">{{item.name}}
+      </view>
+    </view>
+  </view>
+   <view class='insurance-bar'  catchtap='selectProduct'>
+     <view class='insurance-bar-left'>
+        <view class='insurance-bar-title'>报价服务</view>
+        <view class='insurance-bar-text'>
+            购买畅心保 <text catchtap="toPage">《闪电狗畅心包》</text>
+        </view>
+    </view>
+     <view class='insurance-bar-left'>
+        <icon color="{{iconActive? 'red' : ''}}" type="{{iconActive ? 'success' : 'circle'}}"  size="20"></icon>
+    </view>
+    </view>
+     <van-button size="large" type="danger"  bind:click='toPages'>确认</van-button>
+</view>

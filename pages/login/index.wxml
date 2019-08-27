@@ -1,0 +1,27 @@
+<!--pages/login/login.wxml-->
+<view class='login'>
+  <view class='login-title'>
+    欢迎使用闪电狗
+  </view>
+  <view class='login-model'>
+      <image class='left-img' src='../../images/login/loading_ic_user.png'></image>
+      <input class='input-phone' placeholder-class="color" type="number" value='{{phone}}' bindinput='setPone' placeholder="请输入手机号码" auto-focus />
+      <image class="right-img" hidden="{{phone==''}}" bindtap='del' src='../../images/login/loading_ic_delete.png'></image>
+  </view>
+  <view class='login-model-two'>
+      <image class='left-img-two' src='../../images/login/loading_ic_password.png'></image>
+      <input class='input-code' placeholder-class="color" type="number" value='{{code}}' bindinput='setCode' placeholder="请输入验证码" />
+      <text hidden="{{ishowCode}}" bindtap='getCode' class="code-button">{{codeText}}</text> 
+      <text hidden="{{!ishowCode}}" class="code-button-time">{{codeTime}} 秒</text> 
+  </view>
+  <!-- <view class='login-model-three'>
+      <text bindtap='toLosePassword'>忘记密码?</text> 
+  </view>      -->
+<button  bindtap='loginQuest'>
+  登录
+</button> 
+  <view class='login-model-agreement'>
+      <text>登录即表示已同意</text> 
+      <text style='color:#FF4444' bindtap='toAgreement'>《闪电狗用户协议》</text>
+  </view> 
+</view>

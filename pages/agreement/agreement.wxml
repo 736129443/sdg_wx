@@ -1,0 +1,5 @@
+<!--pages/agreement/agreement.wxml-->
+<web-view src="https://www.shandiangou-app.com:450/#/customerServiceProtocol"></web-view>
+<!-- <text>闪电狗用户协议</text> -->
+
+

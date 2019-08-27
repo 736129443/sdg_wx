@@ -1,0 +1,41 @@
+<!-- pages/cart/cart.wxml -->
+<view class='cart'>
+  <view wx:if='{{shopCarList.length<=0}}'>
+    <view class="title-box">购物车空空如也～</view>
+    <view class='van-button'>
+      <van-button plain hairline type="danger" bind:click='toIndexPage'>去逛逛啦</van-button>
+    </view>
+  </view>
+  <view wx:if='{{shopCarList.length>=0}}'>
+    <view class="group-bg" wx:for="{{shopCarList}}" wx:key=''>
+      <view class="market-name-view">{{item[0].market}}</view>
+      <view class='cart-list' wx:for='{{item}}' wx:for-index="subIndex" wx:for-item="subItem" wx:key='{{subItem.goodsId}}'>
+        <view class='checke-box'>
+          <icon type="{{subItem.active ? 'success' : 'circle'}}" color="{{subItem.active? 'red' : ''}}" size="20" data-index="{{subIndex}}" data-super-index="{{index}}" bindtap="selectProduct" data-id="{{subItem.goodsId}}"></icon>
+        </view>
+        <view class='cart-list-img' data-id="{{subItem.goodsId}}" data-type="{{subItem.type}}" bindtap="toDetail">
+          <x-image class='cart-pic' mode='aspectFill' src="{{imgUrl}}{{subItem.goodsThumbnails}}" lazy-load="true" broken-image="/images/placeholder.png"></x-image>
+        </view>
+        <view class='cart-list-center' data-id="{{subItem.goodsId}}" data-type="{{subItem.type}}" bindtap="toDetail">
+          <view>{{subItem.name}}</view>
+          <van-stepper value="{{subItem.goodsNum }}" data-index='{{subIndex}}' data-super-index="{{index}}" bind:change="onChange" />
+        </view>
+        <view class='cart-list-right'>
+          <view class='price'>￥{{subItem.price}}</view>
+          <van-button size="small" plain hairline type="danger" data-super-index="{{index}}" data-index='{{subIndex}}' bind:click='delete'>
+            删除
+          </van-button>
+        </view>
+      </view>
+      <van-submit-bar disabled='{{isTrue}}' price="{{total}}" button-text="结算" bind:submit="onClickButton">
+        <van-tag class='van-tag' bindtap="selectAllProduct" color="#fff">
+          <icon class='icon' type="{{allSelect? 'success' : 'circle'}}" size="20" color="{{allSelect? 'red' : ''}}"></icon>
+          <text style="color:#333;font-size: 13px">全选</text>
+        </van-tag>
+        <!-- <view slot="tip">
+            您的收货地址不支持同城送, <text>修改地址</text>
+          </view> -->
+      </van-submit-bar>
+    </view>
+  </view>
+</view>

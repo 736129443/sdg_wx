@@ -1,0 +1,70 @@
+.order-item-bg {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #f2f2f2;
+  font-size: 14px;
+}
+.order-item-bg .bg-view {
+  width: 100%;
+  background: #fff;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.order-item-bg .top-bg {
+  margin-top: 14rpx;
+  font-size: 14px;
+  color: #333;
+  line-height: 44px;
+}
+.order-item-bg .top-bg .time {
+  display: inline-block;
+}
+.order-item-bg .top-bg .car-type {
+  float: right;
+}
+.order-item-bg .top-bg .right-icon-text {
+  color: #999;
+  float: right;
+}
+.order-item-bg .content-bg {
+  margin-top: 2px;
+  clear: both;
+  display: flex;
+}
+.order-item-bg .content-bg .process-bg {
+  flex: 1;
+}
+.order-item-bg .content-bg .status-img {
+  align-self: flex-start;
+  margin-top: 20rpx;
+  width: 140rpx;
+  height: 140rpx;
+}
+.order-item-bg .bottom-bg {
+  margin-top: 2px;
+}
+.order-item-bg .bottom-bg .bottom-sub-bg {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 14rpx 0;
+}
+.order-item-bg .bottom-bg .bottom-sub-bg .bottom-btn {
+  display: inline-block;
+  border-color: #ccc;
+  margin-left: 14rpx;
+}
+.order-item-bg .bottom-bg .bottom-sub-bg .order-again {
+  display: inline-block;
+  border-color: red;
+  color: red;
+  margin-left: 14rpx;
+}
+.order-item-bg .bottom-bg .underway {
+  justify-content: space-between;
+}
+.order-item-bg .bottom-bg .underway .wait-tips {
+  color: red;
+}

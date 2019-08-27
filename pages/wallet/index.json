@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+   "category-list-right": "/common/category-item/category-list-right/index",
+   "van-icon": "/vanUI/dist/icon/index"
+  },
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,31 @@
+<view class="order-item-bg">
+    <wxs module="filter" src="../../../utils/filtter.wxs"></wxs>
+    <view class="top-bg bg-view" bindtap="tapEvent">
+        <view class="time">{{filter.getTimeString(info.createTime,'YYYY-MM-dd hh:mm')}}</view>
+        <!-- <van-tag style="margin-left:20rpx" wx:if="{{isAppointment}}" type="danger">预约</van-tag> -->
+        <!-- <view class="car-type">
+            小面包
+        </view> -->
+        <view class="right-icon-text">>></view>
+    </view>
+    <view class="content-bg bg-view">
+        <view class="process-bg">
+            <address-item info="{{roadLine[0]}}" status="0"></address-item>
+            <address-item info="{{roadLine[1]}}" status="2"></address-item>
+        </view>
+        <image class="status-img" src="{{filter.getStatusPic(info.status)}}"></image>
+    </view>
+    <!-- <view class="bottom-bg bg-view">
+        <view class="underway bottom-sub-bg" wx:if="{{info.status==''}}">
+            <van-button bind:click="cancel" size="small" round plain custom-class="bottom-btn">取消订单</van-button>
+            <view class="wait-tips">等待司机接单</view>
+        </view>
+        <view class="finished bottom-sub-bg" wx:elif="{{status==1}}">
+            <van-button bind:click="again" size="small" round plain custom-class="order-again">再次下单
+            </van-button>
+            <van-button bind:click="evaluate" size="small" round plain custom-class="bottom-btn">立即评价</van-button>
+            <van-button bind:click="track" size="small" round plain custom-class="bottom-btn">查看轨迹</van-button>
+        </view>
+        <view class="cancaled bottom-sub-bg" wx:elif="{{status==2}}"></view>
+    </view> -->
+</view>

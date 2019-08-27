@@ -1,0 +1,8 @@
+<view class="car-card-bg">
+    <image class="car-img" mode="aspectFit" src="{{baseUrl}}{{item.thumbnailPic}}"></image>
+    <view class="car-info-bg">
+        <label>载重：</label>
+        <label>容积：{{item.capacity}} L</label>
+        <label>长宽高：{{item.length}}*{{item.width}}*{{item.height}} (m)</label>
+    </view>
+</view>

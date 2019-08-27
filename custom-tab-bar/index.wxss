@@ -1,0 +1,43 @@
+.tab-bar {
+  border-top: 2rpx #eee solid;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 110rpx;
+  background: white;
+  display: flex;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.tab-bar .tab-bar-item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.tab-bar .tabbar-img {
+  width: 22px;
+  height: 22px;
+}
+.tab-bar .tabbar-title {
+  font-size: 12px;
+}
+.tab-bar .tabbar-search-bd {
+  position: absolute;
+  top: -14px;
+  background: #e64340;
+  border-radius: 22px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tab-bar .tabbar-search-bd .tabbar-search-img {
+  display: block;
+  width: 30px;
+  height: 30px;
+}

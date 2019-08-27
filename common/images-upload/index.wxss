@@ -1,0 +1,45 @@
+/* pages/upload/upload.wxss */
+/* 上传图片 */
+.flex {
+  display        : flex;
+  justify-content: flex-start;
+}
+
+.up-pic {
+  /* padding        :20rpx 24rpx; */
+  width             : 100%;
+  box-sizing        : border-box;
+  /* justify-content: center; */
+}
+
+.pic-box {
+  margin-top: 20rpx;
+  flex-flow : wrap;
+  width     : 100%;
+}
+
+.add-pic {
+  position: relative;
+  width   : 32%;
+  margin  : 0 2% 10rpx 0;
+}
+
+.add-pic:nth-child(3n) {
+  margin-right: 0;
+}
+
+.add-pic image {
+  width : 100%;
+  height: 100%;
+}
+
+/* 删除图片 */
+.img-de image {
+  width        : 44rpx;
+  height       : 44rpx;
+  border-radius: 26rpx;
+  background   : #fff;
+  position     : absolute;
+  right        : 0;
+  top          : 0;
+}

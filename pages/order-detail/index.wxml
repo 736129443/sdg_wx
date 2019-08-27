@@ -1,0 +1,72 @@
+<view class="container-bg">
+  <view class="driver-info-bg block">
+    <x-image class="driver-avatar" mode='aspectFill' src="11" lazy-load="true" broken-image="/images/personal/head-avatar-placeholder.png"></x-image>
+    <text class="driver-name">隔壁老王</text>
+    <view class="number-plate">
+      <view class="">13434543345</view>
+      <view class="">陕A12323</view>
+    </view>
+    <view class="order-type">{{detail.scene=='one'?'整车':'拼单'}}</view>
+  </view>
+  <view class="order-info-bg block">
+    <view class="order-top">
+      <view class="info-cell">
+        <label class="title-label" for="">订单编号：</label>
+        <label class="value-label" for="">123432123454</label>
+      </view>
+      <view class="info-cell">
+        <label class="title-label" for="">用车时间：</label>
+        <label class="value-label" for="">2019年7月29日 19:30</label>
+      </view>
+    </view>
+    <view class="order-bottom">
+      <block wx:for="{{locArray}}" wx:key="index">
+        <address-item info="{{item}}" status="{{index==0?'0':index==locArray.length-1?'2':'1'}}"></address-item>
+      </block>
+    </view>
+  </view>
+  <view class="car-info-bg block">
+    <view class="info-cell">
+      <label class="title-label" for="">车型：</label>
+      <label class="value-label" for="">{{detail.params}}</label>
+    </view>
+    <view class="info-cell">
+      <label class="title-label" for="">特殊车型：</label>
+      <label class="value-label" for="">拆全座</label>
+    </view>
+    <view class="info-cell">
+      <label class="title-label" for="">附加服务：</label>
+      <label class="value-label" for="">搬回，电子回单</label>
+    </view>
+    <view class="info-cell">
+      <label class="title-label" for="">备注信息：</label>
+      <label class="value-label" for="">小心轻放</label>
+    </view>
+    <view class="info-cell">
+      <label class="title-label" for="">货物信息：</label>
+      <label class="value-label" for="">食品，大于50公斤</label>
+    </view>
+  </view>
+  <view class="cost-info-bg block">
+    <view class="price-bg">
+      <view class="">
+        费用：
+        <text class="price-text">{{detail.price}}元</text>
+      </view>
+      <label class="price-detail-label" for="">价格明细</label>
+    </view>
+    <label for="">已支付</label>
+  </view>
+  <view class="trace-info-bg block">
+    <view class="tracr-title">货物追踪</view>
+    <block wx:for="{{traceArray}}" wx:key="{{index}}">
+      <view class="address-bg">
+        <image class="point-img {{index==0?'begin':index==traceArray.length-1?'end':'pass'}}" src="/images/order-manager/ic_homepage_last.png"></image>
+        <view class="address-text-bg">
+          <view class="address">{{item.statusInfo}}</view>
+          <view class="sub-address">{{item.time}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,53 @@
+<scroll-view class="container" scroll-y>
+    <form bind:submit="submit" report-submit="true">
+        <view class="address-box">
+            <view class="add-address" wx:if="{{addressData==null}}">
+                <view class="title" bindtap="selectAddress">新增收货地址</view>
+            </view>
+            <view class="show-address" wx:if="{{addressData!=null}}" bindtap="selectAddress">
+                <view class="name-tel">{{addressData.contractor}} {{addressData.phone}}</view>
+                <view class="addr-text">
+                    {{addressData.province}}{{addressData.area}}{{addressData.county}}{{addressData.address}}
+                </view>
+            </view>
+        </view>
+        <view class="goods-list">
+            <view class="list-title">商品列表</view>
+            <view class="panel-bg" wx:for="{{shopList}}" wx:key="{{index}}">
+                <van-panel title="{{item.market}}">
+                    <van-card wx:for='{{item.goods}}' wx:for-item="subItem" wx:for-index="subIndex" wx:key="{{subIndex}}" custom-class='vanCard' num="{{subItem.amount}}" price="{{subItem.price}}" title="{{subItem.name}}" thumb="{{imgUrl}}{{subItem.goodsPic }}" />
+                </van-panel>
+            </view>
+        </view>
+        <!-- <view class="peisong-way">
+            <view class="row-box">
+                <view class="row-label">备注</view>
+                <view class="right-text">
+                    <input name="remark" value="{{remark}}" class="liuyan" placeholder="如需备注请输入"
+                        bindinput="setRemark" />
+                </view>
+            </view>
+        </view> -->
+        <!-- <van-submit-bar
+                  price="{{total}}"
+                  button-text="去支付"
+                  formType="submit"
+                  bind:submit="submit"
+                  price-class='price'
+                  tip="{{ true }}"
+                >
+                  <view slot="tip">
+                    您的收货地址不支持同城送, <text>修改地址</text>
+                  </view>
+                </van-submit-bar> -->
+        <view class="jiesuan-box">
+            <view class="left-price">
+                <view class="total">
+                    合计：
+                    <text>¥ {{total}}</text>
+                </view>
+            </view>
+            <button class="to-pay-btn" formType="submit">提交订单</button>
+        </view>
+    </form>
+</scroll-view>

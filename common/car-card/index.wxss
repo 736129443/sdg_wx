@@ -1,0 +1,23 @@
+.car-card-bg {
+  background: #f5f5ff;
+  color: #333;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60rpx;
+  height: 150rpx;
+  box-sizing: content-box;
+  margin-top: 16rpx;
+}
+.car-card-bg .car-img {
+  height: 100%;
+  width: 42%;
+}
+.car-card-bg .car-info-bg {
+  line-height: 18px;
+  flex: 1;
+}
+.car-card-bg .car-info-bg label {
+  display: block;
+}

@@ -1,0 +1,21 @@
+<!--common/cart-item/cart-list.wxml-->
+ <view  class='cart-list' wx:for='{{list}}' wx:key='{{item.id}}'>
+            <view class='checke-box'>
+                <icon type="{{item.active ? 'success' : 'circle'}}"  color="{{item.active? 'red' : ''}}" size="20" data-index="{{index}}" bindtap="selectProduct"  data-id="{{item.id}}"></icon>
+            </view>
+           <view class='cart-list-img'>
+                <image src='{{item.pics[0]}}'></image>
+           </view>
+           <view class='cart-list-center'>
+               <view>
+                {{item.goodsName}}
+               </view>
+                <van-stepper value="{{item.goodsNumber }}" data-index='{{index}}' bind:change="onChange" />
+           </view>
+            <view class='cart-list-right'>
+               <view class='price'>
+                 ￥{{item.price}}
+               </view>
+               <van-button  size="small" plain hairline type="danger"  data-index='{{index}}'bind:click='deletes'>删除</van-button>
+           </view>
+ </view>

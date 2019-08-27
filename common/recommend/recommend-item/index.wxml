@@ -1,0 +1,12 @@
+<view class="bg">
+    <x-image class="goods-img" src="{{baseUrl}}{{picUrl}}" broken-image="/images/placeholder.png"></x-image>
+    <view class="goods-title">
+        <slot name="red-label"></slot>
+        {{title}}
+    </view>
+    <view class="price-bg">
+        ￥
+        <label class="price-text">{{price}}</label>
+        <!-- <label class="spell-text">已拼{{spellNum}}件</label> -->
+    </view>
+</view>

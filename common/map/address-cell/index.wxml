@@ -1,0 +1,11 @@
+<view class="address-bg custom-class">
+    <image class="point-img" src="{{status==0?imgStart:imgEnd}}"></image>
+    <view class="address-info-bg">
+        <van-field value="{{value}}" placeholder="{{placeholder}}" readonly use-icon-slot bindtap="fieldClick">
+            <van-icon name="{{icon}}" wx:if="{{icon}}" slot="icon" size="22px" color="#888" custom-class="right-icon"
+                catchtap="rightIconMehtod">
+            </van-icon>
+        </van-field>
+    </view>
+    <image class="right-img" wx:if="{{src}}" src="{{src}}" bindtap="rightImgMethod"></image>
+</view>

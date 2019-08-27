@@ -1,0 +1,41 @@
+<view class="container">
+  <image class="personal-bg-img" src="/images/personal/personal_bg_top.png">
+    <view class="userinfo-bg">
+      <image class="user-avatar" src="/images/personal/head-avatar-placeholder.png">
+      </image>
+      <view class="userinfo-text-bg">
+        <view class="username-text">
+          {{userInfo.nickName?userInfo.nickName:userInfo.phone}}
+        </view>
+        <view class="integral-text">
+          积分：{{userInfo.score?userInfo.score:'0'}} >
+        </view>
+      </view>
+    </view>
+  </image>
+  <view class="money-card-box box-shadow">
+    <view class="wallet-btn button" bindtap='toWallet'>
+      <image class="btn-img" src="/images/personal/ic_personal_balance.png"></image>
+      <text class="btn-title">钱包
+      </text>
+    </view>
+    <view class="coupon-btn button" bindtap="gotoCoupon">
+      <image class="btn-img" src="/images/personal/ic_personal_voucher.png"></image>
+      <text class="btn-title">优惠券
+      </text>
+    </view>
+  </view>
+
+
+  <card title="订单列表" custom-class="order-list-box">
+    <view class="all-order-btn" slot="right-top-slot" bindtap="gotoOrder">
+      全部订单 >>
+    </view>
+    <view class="order-list">
+      <block wx:for="{{order_list_array}}" wx:key="">
+        <card-item style="width:150rpx;height:220rpx;" title="{{item.title}}" picUrl="{{item.picUrl}}"
+          data-index="{{index}}" bindtap="tapItem"></card-item>
+      </block>
+    </view>
+  </card>
+</view>

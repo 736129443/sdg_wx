@@ -1,0 +1,88 @@
+{
+  "pages": [
+    "pages/login/index",
+    "pages/home/index",
+    "pages/add-goods/add-goods",
+    "pages/wallet/index",
+    "pages/fast-ride/index",
+    "pages/balance/index",
+    "pages/search-detail/search-detail",
+    "pages/categorys/category",
+    "pages/publish-depot/index",
+    "pages/common-address/index",
+    "pages/payment/index",
+    "pages/goods-detail/goods-detail",
+    "pages/fast-ride/pois-select/index",
+    "pages/pay-order/pay-order",
+    "pages/pay-record/index",
+    "pages/coupons/index",
+    "pages/goods-information/index",
+    "pages/goods-information-two/index",
+    "pages/notarize-information/index",
+    "pages/agreement/agreement",
+    "pages/switchcity/switchcity",
+    "pages/price-detail/index",
+    "pages/cart/cart",
+    "pages/addAddress/addAddress",
+    "pages/upload/upload",
+    "pages/warehouse/index",
+    "pages/warehouse-detail/index",
+    "pages/supplyGoods/supplyGoods",
+    "pages/my/index",
+    "pages/order-detail/index",
+    "pages/order-manager/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "borderStyle": "black",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "iconPath": "images/nav/home-off.png",
+        "selectedIconPath": "images/nav/home-on.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/categorys/category",
+        "iconPath": "images/nav/tabbar-search.png",
+        "selectedIconPath": "images/nav/tabbar-search.png",
+        "text": "搜索"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "images/nav/my-off.png",
+        "selectedIconPath": "images/nav/my-on.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-icon": "/vanUI/dist/icon/index",
+    "suspend-button": "/common/suspend-button/index",
+    "van-popup": "/vanUI/dist/popup/index",
+    "van-nav-bar": "/vanUI/dist/nav-bar/index",
+    "common-nav": "/common/custom-nav-bar/common-nav/index",
+    "x-scroll-view": "/common/scroll/wx-pulltorefresh-view",
+    "x-image": "/common/image/x-image",
+    "van-tag": "/vanUI/dist/tag/index",
+    "recommend-group": "/common/recommend/recommend-group/index",
+    "empty-data": "/common/empty-data/index",
+    "van-toast": "/vanUI/dist/toast/index"
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

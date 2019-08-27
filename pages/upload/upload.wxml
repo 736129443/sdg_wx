@@ -1,0 +1,16 @@
+<!-- 选择图片 
+Upload Attributes
+
+1，add--添加按钮图片URL--String类型
+2，close--删除按钮图片URL--String类型
+3，up-width--每个图片的平均宽度--Number类型--单位rpx（默认：226rpx）
+4，up-height--每个图片的平均高度--Number类型--单位rpx（默认：226rpx）
+5，total--设置添加图片的总张数--Number类型（默认：9）
+
+
+Upload Events
+
+1，change事件回调e.detail.imgArray 返回要上传的图片路径数组
+-->
+
+<upload add='{{add}}' up-width='{{226}}' up-height='{{226}}' close='{{close}}' bind:onchange='change' total='{{10}}'> </upload>

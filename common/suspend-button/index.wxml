@@ -1,0 +1,4 @@
+<view class='shopping-cart-float custom-class'>
+    <van-icon custom-style="display: table-cell;vertical-align: middle" size="26px" name="{{name}}" color="{{color}}"
+        custom-class="icon-class"></van-icon>
+</view>

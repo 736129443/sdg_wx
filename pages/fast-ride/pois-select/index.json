@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "地址选择",
+    "usingComponents": {
+        "van-tag": "/vanUI/dist/tag/index",
+        "van-field": "/vanUI/dist/field/index",
+        "van-cell": "/vanUI/dist/cell/index",
+        "van-cell-group": "/vanUI/dist/cell-group/index"
+    }
+}

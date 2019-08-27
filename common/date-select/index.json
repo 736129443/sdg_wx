@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "van-datetime-picker": "/vanUI/dist/datetime-picker/index"
+    }
+}

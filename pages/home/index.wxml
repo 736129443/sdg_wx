@@ -1,0 +1,56 @@
+<custom-nav-bar icon="scan" bindleftevent="scan" title="{{navTitle}}" bind:navevent="selectArea"></custom-nav-bar>
+<view class="container" style="padding-top:{{navigationBarHeight}}">
+  <view class="page__bd">
+    <view class="swiper-container">
+      <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+        <block wx:for="{{banners}}" wx:key="{{item.id}}">
+          <swiper-item>
+            <image data-id="{{item.id}}" src="{{item.picUrl}}" class="slide-image" width="750rpx" height="562.5rpx" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <!-- <view class="dots">
+        <block wx:for="{{banners}}" wx:key="unique">
+          <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+        </block>
+      </view> -->
+    </view>
+    <view class="category-box">
+      <view class="category-item" data-index="{{index}}" wx:for="{{categories}}" wx:key="" bindtap="categoryTap">
+        <image class="category-imgbox" src="{{item.picUrl}}"></image>
+        <view class="category-title">{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+  <view style="margin-top:20rpx;position: relative;">
+    <view class="weui-loadmore-bd">
+      <view class="weui-loadmore weui-loadmore_line">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">
+          <image class="load_more_img" style="width:32rpx;height:32rpx" src="/images/qd.png"></image>
+          精品推荐
+        </view>
+      </view>
+    </view>
+    <scroll-view class="goods-container">
+      <block wx:for="{{goodsRecommend}}" wx:key="">
+        <goods-item price="{{item.price}}" title=" {{item.goodsDesc}}" unit="{{item.unit}}" picUrl="{{baseUrl}}{{item.goodsThumbnails}}" data-id="{{item.id}}" data-type="{{item.type}}" bindtap="toDetailsTap">
+          <van-tag slot="hot-icon" style="margin-right:4rpx;" wx:if="{{item.isBoutique=='1'}}" type="danger">
+            热卖
+          </van-tag>
+          <view slot="red-border-label" class="red-border-label">
+            <van-tag wx:if="{{item.district}}" type="danger" plain>{{item.district}}</van-tag>
+            <!-- <van-tag type="danger" style="margin-left:6rpx" plain>平台无忧购</van-tag> -->
+          </view>
+          <!-- <text slot="spell-number" class="spell-number-text">
+            已拼{{item.sharePeople}}人
+          </text> -->
+          <view slot="phone-box" class="phone-box" catchtap="callToSeller" data-index="{{index}}">
+            <image class="phone-img" src="/images/home/phone_icon.png"></image>
+            <view class="contact-seller">联系卖家</view>
+          </view>
+        </goods-item>
+      </block>
+    </scroll-view>
+  </view>
+</view>
+<suspend-button bindtap="goCart" name="cart" color="red"></suspend-button>

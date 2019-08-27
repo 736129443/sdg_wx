@@ -1,0 +1,61 @@
+page {
+  height: 100%;
+  background: #f2f2f2;
+}
+.bg {
+  height: calc(100% - 100rpx);
+  width: 100%;
+  color: #333;
+  font-size: 14px;
+}
+.bg .item-bg {
+  padding-top: 14rpx;
+}
+.bg .item-bg .item {
+  padding: 20rpx 30rpx;
+  background: #fff;
+  margin-top: 2rpx;
+}
+.bg .item-bg .item-top {
+  position: relative;
+}
+.bg .item-bg .item-top .tag {
+  position: absolute;
+  right: 30rpx;
+  top: 22rpx;
+}
+.bg .item-bg .item-mid {
+  margin-top: 0;
+  padding: 0 30rpx;
+  padding-bottom: 10rpx;
+  color: #666;
+}
+.bg .item-bg .item-bottom {
+  padding: 0 30rpx;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.bg .item-bg .item-bottom .bottom-btn {
+  display: flex;
+  padding: 8rpx;
+  color: #999;
+}
+.bg .item-bg .item-bottom .bottom-btn label {
+  padding: 6rpx 10rpx;
+}
+.add-address-btn-bg {
+  background: red;
+  color: #fff;
+  font-size: 14px;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 90rpx;
+}
+.pop-bg {
+  padding: 20rpx;
+  background: #fff;
+  border-radius: 8rpx;
+}

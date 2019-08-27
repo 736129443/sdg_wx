@@ -1,0 +1,102 @@
+/* pages/order-information/index.wxss */
+page{
+  height: 100%;
+  color:rgba(0, 0, 0, .75);
+  font-size: 34rpx;
+}
+.order-information{
+  min-height: 100%;
+  width: 100%;
+  background: #F4F4F4;
+  position: relative;
+  padding: 30rpx;
+  box-sizing: border-box;
+  letter-spacing: 2rpx;
+  padding-bottom:180rpx; 
+}
+.order-address-bar{
+  background: white;
+  padding: 20rpx 20rpx  40rpx 20rpx ;
+  border-radius: 10rpx;
+  border: 2rpx solid rgba(0, 0, 0, .15);
+  font-size:30rpx; 
+  box-sizing: border-box;
+}
+.order-setgoods-bar{
+  background: white;
+  padding: 20rpx 20rpx  40rpx 20rpx ;
+  border-radius: 10rpx;
+  border: 2rpx solid rgba(0, 0, 0, .15);
+  font-size:30rpx; 
+  box-sizing: border-box;
+  margin: 20rpx 0 0 0;
+}
+.order-item{
+  width: 100%; 
+  display: flex;
+  justify-content: flex-start;
+  word-wrap: break-word;
+  word-break: normal;
+  margin:20rpx 0;
+}
+.order-img{
+  width: 10%;
+  text-align: center;
+}
+.order-img image{
+  width:20rpx;
+  height:20rpx;
+}
+.order-bar-content{
+  width:90%;
+}
+.order-bar-text{
+  color: rgba(0, 0, 0, .45);
+  font-size: 28rpx;
+}
+.order-bar-title{
+    color       : rgba(0, 0, 0, .75);
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.van-cell-text {
+  display        : flex;
+  justify-content: space-between;
+  align-items    : center;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: rgba(0, 0, 0, .75);
+  letter-spacing: 2rpx;
+}
+.van-cell-text .name{
+  width: 30%;
+}
+.van-cell-text .text{
+  width: 60%;
+  text-align: right;
+  color: rgba(0, 0, 0, .45);
+  font-size: 28rpx;
+}
+.price{
+  margin-left:30rpx; 
+  color: rgba(0, 0, 0, .45);
+}
+.tops-prices{
+    margin-left: 20rpx;
+    color: #FF4444;
+}
+.tops-price{
+    font-size: 34rpx;
+    color: #FF4444;
+    font-weight: bold;
+}
+
+view.van-submit-bar__bar{
+  height: 140rpx;
+}
+view.van-submit-bar__bar button{
+  height: 140rpx;
+  line-height:130rpx;
+}

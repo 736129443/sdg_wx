@@ -1,0 +1,11 @@
+<scroll-view class="recommend-scroll" style="height: 100%" scroll-y bindscrolltoupper="" bindscrolltolower="">
+    <view class="recommend-bg">
+        <block wx:for="{{list}}" wx:key="">
+            <view class="item-bg">
+                <recommend-item title="{{item.name}}" picUrl="{{item.goodsThumbnails}}" spellNum="{{item.spellNum}}" price="{{item.price}}" data-id="{{item.id}}" data-type="{{item.type}}" data-index="{{index}}" bindtap="itemClick">
+                    <van-tag slot="red-label" style="margin-right: 4rpx" type="danger">热卖</van-tag>
+                </recommend-item>
+            </view>
+        </block>
+    </view>
+</scroll-view>

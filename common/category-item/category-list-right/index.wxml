@@ -1,0 +1,46 @@
+<!--common/category-item/cate-list-right/index.wxml-->
+<scroll-view class='right' scroll-y="true" scroll-top='{{scrollTop}}' bindscrolltolower="lower">
+  <slot></slot>
+  <view class="nothing-goods-bg" wx:if="{{list.length == 0}}">
+    <image class="nothing-goods-img" src="/images/empty-icon.png"></image>
+    <text class="nothing-goods-text">亲，暂无相关商品哦！</text>
+  </view>
+  <block wx:for="{{list}}" wx:for-item="goods" wx:key="id">
+    <view class='item-box'>
+
+      <view class='goods-item' bindtap="toDetailsTap" data-type="{{goods.type}}" data-id="{{goods.id}}">
+        <view class='goods-pics'>
+          <x-image class='goods-pic' mode='aspectFill' src="{{imgUrl}}{{goods.goodsThumbnails}}" lazy-load="true"
+            broken-image="/images/placeholder.png">
+          </x-image>
+        </view>
+        <view class='goods-info'>
+          <view class='goods-content-lable'>
+            <view class='goods-content'>
+              <view class='hots'>热卖</view>{{goods.goodsDesc}}
+            </view>
+            <view class='goods-label'>
+              <view class='border-box'>雅塔区</view>
+              <view class='border-box'>平台无忧购</view>
+            </view>
+          </view>
+          <view class='goods-content-button'> <text class='goods-money'>￥</text>{{goods.price}} <text
+              wx:if="{{goods.unit}}">/{{goods.unit}}</text>
+            <text class='size-p'>已拼{{goods.person}}人</text> </view>
+        </view>
+      </view>
+
+      <view wx:if='{{!bigPhone}}' class='phone' bindtap='clickPhone' data-phone='{{goods.phone}}'>
+        <image mode='aspectFill' lazy-load="true" src="/images/home/phone_icon.png"></image>
+      </view>
+      <view wx:if='{{bigPhone}}' class='phone-two' bindtap='clickPhone' data-phone='{{goods.phone}}'>
+        <view class='phone-img'>
+          <image mode='aspectFill' lazy-load="true" src="/images/home/phone_icon.png"></image>
+        </view>
+        <view class='phone-content'>
+          联系卖家
+        </view>
+      </view>
+    </view>
+  </block>
+</scroll-view>

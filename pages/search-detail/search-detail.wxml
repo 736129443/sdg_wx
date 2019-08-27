@@ -1,0 +1,36 @@
+<!--pages/search-detail/search-detail.wxml-->
+
+<view class='search'>
+  <van-search value="{{ value }}" placeholder="请输入搜索关键词" focus use-action-slot bind:change="onSearch"
+    bind:search="onSearch">
+    <view slot="action" bind:tap="onSearchs">搜索</view>
+  </van-search>
+
+  <view class='searchContent' wx:if="{{value==''}}">
+    <view class='hotSearch'>
+      <view class='hotSearchTitle'>
+        <view class='text'>热门搜索 </view>
+      </view>
+      <view class='hotSearchListBox'>
+        <view class='hotSearchList' data-name='{{item.name}}' data-index='{{index}}' wx:for='{{hotSearchList}}'
+          wx:key='{{index}}' bindtap='hotSearch'> {{item.name}}</view>
+      </view>
+    </view>
+
+    <view class='historySearch' wx:if="{{value==''&&searchStorage!=''}}">
+      <view class='historySearchTitle'>
+        <view class='text'>历史搜索 </view>
+        <van-icon class='vanIcon' size='1rem' bindtap='clearStorage' name="delete" />
+      </view>
+      <view class='historySearchListBox'>
+        <view class='historySearchList' data-name='{{item}}' data-index='{{index}}' wx:for='{{searchStorage}}'
+          wx:key='{{index}}' bindtap='historySearch'> {{item}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="right-scroll-bg" wx:if="{{value.length}}">
+    <category-list-right to-page="/pages/goods-detail/goods-detail" imgUrl="{{imgUrl}}" class='content'
+      big-phone='{{true}}' list='{{goods}}' bind:myReachBottom="myReachBottom">
+    </category-list-right>
+  </view>
+</view>

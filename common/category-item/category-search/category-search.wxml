@@ -1,0 +1,6 @@
+<!--common/category-search/category-search.wxml-->
+<view class='search'>
+    <image class='img-search' src='/images/category/search.png'></image>
+    <input class='search-input' type='text' disabled placeholder-class='placeholder' placeholder='搜索'></input>
+    <slot></slot>
+</view>

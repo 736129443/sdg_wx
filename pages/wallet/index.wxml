@@ -1,0 +1,31 @@
+<!-- pages/wallet/index.wxml -->
+<view class='wallet'>
+    <van-icon class='arrow-left' bindtap='back' name="arrow-left" />
+    <view class='wallet-balance'>
+        <view class='balance'>
+            余额(元)
+            <text>{{balance}}</text>
+        </view>
+        <view class='balance-bar'>
+            <view class='balance-pay' bindtap='toBalance'>
+                <van-icon class='van-icon' name="peer-pay" />
+                去充值
+            </view>
+            <view class='line'></view>
+            <view class='balance-records' bindtap='toRecord'>
+                <van-icon class='van-icon' name="records" />
+                账单记录
+            </view>
+        </view>
+    </view>
+    <view class='recommend'>
+        <view class="recommend-title">
+            <view class='recommend-content'>
+                <image src="/images/qd.png"></image>
+                <view class='recommend-text'>精品推荐</view>
+            </view>
+        </view>
+        <recommend-group list="{{goodsRecommend}}" binditemclick="itemClick"></recommend-group>
+        <!-- <category-list-right big-phone='{{true}}' list='{{goods}}' bind:mytodetail='todetail'> </category-list-right> -->
+    </view>
+</view>

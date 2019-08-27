@@ -1,0 +1,6 @@
+<view class="card-item-box">
+    <image class="card-item-img" src="{{picUrl}}"></image>
+    <view class="card-item-title">
+        {{title}}
+    </view>
+</view>

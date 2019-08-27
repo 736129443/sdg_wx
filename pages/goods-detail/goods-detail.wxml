@@ -1,0 +1,43 @@
+<!--pages/goods-detail/goods-detail.wxml-->
+<view class='container'>
+  <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+    indicator-dots='{{dots}}' indicator-active-color='rgba(0,0,0,.6)' bindchange="swiperchange">
+    <block wx:for="{{goodsDetail.goodsThumbnails}}" wx:key="id">
+      <swiper-item>
+        <x-image src="{{baseUrl}}{{item}}" class="slide-image" mode="aspectFit" lazy-load="true"></x-image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="goods-info">
+    <view class="goods-title">{{goodsDetail.name}}</view>
+    <view class="goods-price" style="padding-left:35rpx;">¥ {{goodsDetail.price}}</view>
+    <!-- <view class="goods-price" style="color:#999;font-size:24rpx;">购买{{goodsDetail.buyBumber}}次</view>
+    <view class="goods-price" style="color:#999;font-size:24rpx;">共收到 {{goodsDetail.reputation}} 次好评 </view> -->
+  </view>
+  <view class="goods-des-info">
+    <view class="label-title">商品介绍</view>
+    <view class="goods-text">
+      {{goodsDetail.goodsDesc}}
+    </view>
+  </view>
+  <van-goods-action>
+    <van-goods-action-icon icon="cart-o" text="购物车" info="{{showsNumber}}" bind:click="shopCart" />
+    <van-goods-action-button text="加入购物车" type="warning" bind:click="addGoods" />
+    <van-goods-action-button text="立即购买" bind:click="buyGoods" />
+  </van-goods-action>
+  <van-action-sheet show="{{ show }}" title="商品数量" bind:close="onClose">
+    <view class='goods-item'>
+      <image class='goods-pic' mode='aspectFill' lazy-load="true" src="{{pic}}"></image>
+      <view class='goods-infos'>
+        <text>{{goodsDetail.goodsName}}</text>
+        <text style='color:red;'>￥{{goodsDetail.price}}</text>
+      </view>
+    </view>
+    <view class='goods-items'>
+      <view>购买数量</view>
+      <van-stepper value="{{ goodsNumber }}" bind:change="onChange" />
+    </view>
+    <van-button size='large' type="danger" data-type='{{type}}' bind:click='submits'>{{type=='addCart'?'加入购物车':'去结算'}}
+    </van-button>
+  </van-action-sheet>
+</view>

@@ -1,0 +1,42 @@
+.nav-head {
+    background-color: white;
+    display         : flex;
+    justify-content : center;
+    position        : fixed;
+    width           : 100%;
+    top             : 0;
+    z-index         : 999;
+
+    .back-img {
+        padding : 10rpx;
+        width   : 30rpx;
+        height  : 30rpx;
+        position: absolute;
+        bottom  : 24rpx;
+        left    : 30rpx;
+    }
+
+    .title-area {
+        position   : absolute;
+        bottom     : 26rpx;
+        display    : flex;
+        align-items: center;
+
+        .loc-img {
+            position: absolute;
+            top     : 0;
+            width   : 48rpx;
+            height  : 48rpx;
+            display : inline-block;
+        }
+
+        .head-text {
+            color      : #333;
+            font-size  : 17px;
+            font-weight: bold;
+            padding    : 5rpx 15rpx 0 54rpx;
+            display    : inline-block;
+            line-height: 40rpx;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+/* common/category-search/category-search.wxss */
+.search{
+  height:100rpx;
+  padding:12rpx 40rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.search-input{
+  height:100%;
+  padding: 0 0 0 50rpx;
+  background: #EEEEEE;
+  border-radius:100rpx;
+  text-align: center;
+}
+.placeholder{
+  color: #BDBDBD;
+  letter-spacing: 4rpx;
+}
+.img-search{
+  position: absolute;
+  left:44%; 
+  top:36rpx; 
+  width:30rpx;
+  height:30rpx;
+  opacity: 0.3;
+}

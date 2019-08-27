@@ -1,0 +1,8 @@
+/* common/category-scroll-list/category-scroll-list.wxss */
+.list-content,category-scroll-group{
+  width: 100%;
+  flex: 1;
+  display: flex;
+  margin-bottom:110rpx;
+  flex-direction: row;
+}

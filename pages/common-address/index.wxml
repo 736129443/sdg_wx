@@ -1,0 +1,43 @@
+<view class="bg">
+  <x-scroll-view refreshing="{{refreshing}}" style="height: 100%" nomore="{{nomore}}" bindpulldownrefresh="_onPullDownRefresh" bindloadmore="_onLoadmore">
+    <empty-data show="{{!addressArr.length}}"></empty-data>
+    <block wx:for="{{addressArr}}" wx:key="">
+      <view class="item-bg">
+        <view class="item-top item" data-item="{{item}}" bindtap="sureSelect">
+          {{item.contractor}} {{item.phone}}
+          <van-tag custom-class="tag" type="danger" wx:if="{{item.type=='depot'}}">仓库</van-tag>
+        </view>
+        <view class="item-mid item" data-item="{{item}}" bindtap="sureSelect">
+          {{item.province}}{{item.area}}{{item.county}}{{item.address}}
+        </view>
+        <view class="item-bottom item">
+          <view class="bottom-btn" style="margin-left: 20rpx" data-id="{{item.id}}" bindtap="deleteItem">
+            <van-icon name="delete" size="24px" color="#999"></van-icon>
+            <label>删除</label>
+          </view>
+          <view class="bottom-btn" data-type="edit" data-index="{{index}}" bindtap="openAddPop">
+            <van-icon name="edit" size="24px" color="#999"></van-icon>
+            <label>编辑</label>
+          </view>
+        </view>
+      </view>
+    </block>
+  </x-scroll-view>
+</view>
+<view class="add-address-btn-bg" data-type="add" bindtap="openAddPop">
+  <text style="font-size: 20px;">+</text>
+  新增常用地址
+</view>
+<van-popup show="{{ showPop }}">
+  <view class="pop-bg" style="width: {{popW}}px">
+    <van-cell-group>
+      <van-field value="{{ editInfo.contractor }}" type="text" label="联系人" bind:input="setContractor" placeholder="请输入联系人姓名" />
+      <van-field value="{{ editInfo.phone }}" type="number" label="联系电话" bind:input="setPhone" placeholder="请输入联系电话" />
+      <van-field value="{{ editInfo.address }}" type="textarea" label="地址" is-link placeholder="请选择地址" autosize readonly bindtap="selectAddress" />
+    </van-cell-group>
+    <view style="width: 80%;margin-left:10%">
+      <van-button type="primary" bind:click="submit" block>确定</van-button>
+    </view>
+  </view>
+</van-popup>
+<van-toast id="van-toast" />

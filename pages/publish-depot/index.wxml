@@ -1,0 +1,106 @@
+<view class="page-bg">
+    <van-cell-group>
+        <van-field value="{{ depotName }}" label="仓库名称" type="textarea" placeholder="请输入仓库名称" autosize
+            bind:input="setDepotName" />
+        <picker mode="region" value="{{area}}" bindchange="setArea">
+            <van-field value="{{ area }}" label="所在地区" type="textarea" placeholder="请选择仓库所在区域" is-link readonly />
+        </picker>
+        <van-field value="{{ address }}" label="详细地址" type="textarea" placeholder="请输入仓库具体地址" autosize
+            bind:input="setAddress" border="{{ false }}" />
+        <view class="image-bg">
+            <upload-image add="/images/add-pic.png" close='{{close}}' bind:onchange='change' total='{{9}}'>
+            </upload-image>
+        </view>
+    </van-cell-group>
+    <van-cell-group custom-class="cell-group">
+        <picker range="{{depotTypeArray}}" bindchange="setDepotType">
+            <van-field value="{{depotType}}" label="仓库类型" placeholder="请选择仓库类型" is-link readonly />
+        </picker>
+        <picker range="{{strorageTypeArray}}" bindchange="setStrorageType">
+            <van-field value="{{ strorageType }}" label="存储类型" placeholder="请选择存储类型" is-link readonly />
+        </picker>
+        <van-field value="{{ startRentArea }}" label="起租面积" bind:input="setStartRentArea" type="number"
+            placeholder="请输入起租面积" use-icon-slot>
+            <label class="unit-label" slot="icon">m²</label>
+        </van-field>
+        <van-field value="{{ rentAvailableArea }}" label="可租面积" bind:input="setRentAvailableArea" type="number"
+            placeholder="请输入可租面积" use-icon-slot>
+            <label class="unit-label" slot="icon">m²</label>
+        </van-field>
+        <van-field value="{{ totalArea }}" label="总面积" type="number" bind:input="setTotalArea" placeholder="请输入总面积"
+            use-icon-slot>
+            <label class="unit-label" slot="icon">m²</label>
+        </van-field>
+        <van-field value="{{ rentPrice }}" label="租金" type="number" bind:input="setRentPrice" placeholder="请输入租金"
+            use-icon-slot>
+            <label class="unit-label" slot="icon">元</label>
+        </van-field>
+        <picker range="{{unitArray}}" bindchange="setUnit">
+            <van-field value="{{ unit }}" label="租金单位" placeholder="请选择租金单位" is-link readonly />
+        </picker>
+        <picker range="{{paywayArray}}" bindchange="setPayway">
+            <van-field value="{{ payway }}" label="付费方式" placeholder="请选择付费方式" is-link readonly />
+        </picker>
+        <picker range="{{invoiceArray}}" bindchange="setInvoice">
+            <van-field value="{{ invoice }}" label="发票" placeholder="请选择发票类型" is-link readonly />
+        </picker>
+        <van-field value="{{ contractor }}" label="联系人" bind:input="setContractor" placeholder="请输入联系人" />
+        <van-field value="{{ contractorPhone }}" label="联系电话" bind:input="setContractorPhone" type="digit"
+            border="{{ false }}" placeholder="请输入联系电话" />
+    </van-cell-group>
+    <van-cell-group title="基本信息">
+        <van-field value="{{ depotWidth }}" label="仓库主干宽度" bind:input="setDepotWidth" placeholder="请输入仓库主干宽度"
+            type="number" use-icon-slot>
+            <label class="unit-label" slot="icon">m</label>
+        </van-field>
+        <picker range="{{unloadPlatformArray}}" bindchange="setUnloadPlatform">
+            <van-field value="{{ unloadPlatform }}" label="卸货平台" type="textarea" placeholder="请选择卸货平台" is-link readonly>
+            </van-field>
+        </picker>
+        <picker range="{{buildingStructureArray}}" bindchange="setBuildingStructure">
+            <van-field value="{{ buildingStructure }}" label="建筑结构" placeholder="请选择建筑结构" is-link readonly></van-field>
+        </picker>
+        <picker range="{{terraceArray}}" bindchange="setTerrace">
+            <van-field value="{{ terrace }}" label="地坪" type="textarea" placeholder="请选择地坪" is-link readonly>
+            </van-field>
+        </picker>
+        <van-field value="{{ depotHeight }}" label="库高" type="number" bind:input="setDepotHeight" use-icon-slot
+            placeholder="请输入库高">
+            <label class="unit-label" slot="icon">m</label>
+        </van-field>
+        <van-field value="{{ flowHeight }}" label="层高" type="number" bind:input="setFlowHeight" placeholder="请输入层高"
+            use-icon-slot>
+            <label class="unit-label" slot="icon">m</label>
+        </van-field>
+        <van-field value="{{ bearing }}" label="底层承重" type="number" bind:input="setBearing" placeholder="请输底层承重"
+            use-icon-slot>
+            <label class="unit-label" slot="icon">t/m²</label>
+        </van-field>
+        <van-field value="{{ bearingTwice }}" label="二次承重" type="number" bind:input="setBearingTwice"
+            placeholder="请输入二次承重" use-icon-slot>
+            <label class="unit-label" slot="icon">t/m²</label>
+        </van-field>
+        <van-field value="{{ supportingFacility }}" label="配套设施" type="textarea" border="{{ false }}"
+            placeholder="请选择配套设施" is-link readonly bindtap="setSupportingFacility" />
+    </van-cell-group>
+    <van-cell-group title="园区信息">
+        <van-field value="{{ entrypointNum }}" label="园区出入口" bind:input="setEntrypointNum" placeholder="请输入园区出入口"
+            type="textarea"></van-field>
+        <picker range="{{pavementArray}}" bindchange="setPavement">
+            <van-field value="{{ pavement }}" label="路面" border="{{ false }}" placeholder="请选择路面" is-link readonly>
+            </van-field>
+        </picker>
+    </van-cell-group>
+    <van-cell-group title="安防系统">
+        <van-field value="{{ facilities }}" label="消防设备" bindtap="setFacilities" type="textarea" placeholder="请选择消防设备"
+            is-link readonly />
+        <van-field value="{{ security }}" label="报警设备" type="textarea" border="{{ false }}" bindtap="setSecurity"
+            placeholder="请选择报警设备" is-link readonly />
+    </van-cell-group>
+    <view class="button-bg">
+        <van-button custom-class="publish-button" size="small" block type="danger" bind:click="submit">申请发布</van-button>
+    </view>
+    <multiple-picker show="{{showMultiple}}" info-array="{{multipleData}}" flag="{{flag}}"
+        default-str="{{defaultMultipleStr}}" bindsure="multipleSure">
+    </multiple-picker>
+</view>

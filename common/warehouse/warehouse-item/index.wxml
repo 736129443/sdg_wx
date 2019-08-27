@@ -1,0 +1,20 @@
+<view class="warehouse-box" bindtap="itemClick">
+    <x-image class="warehouse-img" src="{{imgUrl}}{{cover}}" broken-image="/images/placeholder.png"></x-image>
+    <view class="warehouse-text-box">
+        <view class="warehouse-title">{{data.details.depotName}}</view>
+        <view class="sub-info-bg">
+            <label>地址：{{data.address}}</label>
+            <label>面积：{{data.totalArea}} m²</label>
+        </view>
+        <van-row custom-class="bottom-box">
+            <van-col>{{data.rentPrice}}</van-col>
+            <van-col>
+                <text decode="{{true}}" style="font-size:17px">&nbsp;/m²/天</text>
+            </van-col>
+            <van-col style="font-size: 14px;color:#999">
+                <text decode="{{true}}">&nbsp;起</text>
+            </van-col>
+        </van-row>
+    </view>
+    <slot name="phone-box"></slot>
+</view>

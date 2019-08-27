@@ -1,0 +1,138 @@
+<!-- pages/warehouse-detail/index.wxml -->
+<view class='warehouse-detail'>
+  <swiper class="swiper_box" autoplay="{{true}}" bindchange="swiperchange">
+    <block wx:for="{{banners}}" wx:key="{{index}}">
+      <swiper-item>
+        <x-image class="banners-item" src="{{baseUrl}}{{item}}" lazy-load="true" broken-image="/images/banners/banner2.png"></x-image>
+        <!-- <x-image src="{{baseUrl}}{{item}}" class="slide-image" width="750rpx" height="562.5rpx" /><x-image> -->
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="pages">{{page+1}} / {{pageAll}}</view>
+  <navigator class="" open-type="navigateBack">
+    <view class='back-bar'>
+      <image src='../../images/commodities_ic_back.png'></image>
+    </view>
+  </navigator>
+  <view class='title-bar'>
+    <view class="title-bar-bg">
+      <view class='title-bar-address'>{{depotDetail.address}}</view>
+      <van-icon name="{{isCommon?'star':'star-o'}}" bind:click="setIsCommon" color="{{isCommon?'#FFD700':'#666'}}" size="24px"></van-icon>
+    </view>
+    <view class='title-bar-params'>
+      <view class='params'>
+        <view>{{depotDetail.startRentArea}}m²</view>
+        <view class='params-content'>起租面积</view>
+      </view>
+      <view class='params'>
+        <view>{{depotDetail.rentPrice}}{{depotDetail.unit}}</view>
+        <view class='params-content'>租金</view>
+      </view>
+      <view class='params'>
+        <view>{{depotDetail.rentAvailableArea}}m²</view>
+        <view class='params-content'>可租面积</view>
+      </view>
+    </view>
+  </view>
+  <view class='address-bar'>
+    <view class='address-information'>
+      <view class='information'>
+        <text>总面积:</text>
+        {{depotDetail.totalArea}}m²
+      </view>
+      <view class='information'>
+        <text>付费方式:</text>
+        {{depotDetail.payway}}
+      </view>
+      <view class='information'>
+        <text>发票:</text>
+        {{depotDetail.invoice}}
+      </view>
+      <view class='information'>
+        <text>位置:</text>
+        {{depotDetail.details.province}}{{depotDetail.details.city}}{{depotDetail.details.region}}{{depotDetail.address}}
+      </view>
+    </view>
+    <view class='contacts-bar'>
+      <view class='contacts-bar-name'>
+        <view>{{depotDetail.contractor}}</view>
+        <text>{{depotDetail.contractorPhone}}</text>
+      </view>
+      <van-button plain hairline type="primary" bind:click="call">立即联系</van-button>
+    </view>
+  </view>
+  <view class='information-bar'>
+    <view class='information-title'>基本信息</view>
+    <view class='information-content'>
+      <view class='information-content-left'>
+        <text>主干宽度(m):</text>
+        {{depotDetail.details.depotWidth}}
+      </view>
+      <view class='information-content-right'>
+        <text>卸货平台:</text>
+        {{depotDetail.details.unloadPlatform}}
+      </view>
+    </view>
+    <view class='information-content'>
+      <view class='information-content-left'>
+        <text>建筑结构:</text>
+        {{depotDetail.details.buildingStructure}}
+      </view>
+      <view class='information-content-right'>
+        <text>地坪:</text>
+        {{depotDetail.details.terrace}}
+      </view>
+    </view>
+    <view class='information-content'>
+      <view class='information-content-left'>
+        <text>库高:</text>
+        {{depotDetail.details.depotHeight}}
+      </view>
+      <view class='information-content-right'>
+        <text>层高:</text>
+        {{depotDetail.details.flowHeight}}
+      </view>
+    </view>
+    <view class='information-content'>
+      <view class='information-content-left'>
+        <text>仓库类型:</text>
+        {{depotDetail.details.depotType}}
+      </view>
+      <view class='information-content-right'>
+        <text>存储类型:</text>
+        {{depotDetail.details.strorageType}}
+      </view>
+    </view>
+    <view class='information-content'>
+      <view class='information-content-left'>
+        <text>底层承重(t/m²):</text>
+        {{depotDetail.details.bearing}}
+      </view>
+      <view class='information-content-right'>
+        <text>二次承重(t/m²):</text>
+        {{depotDetail.details.bearingTwice}}
+      </view>
+    </view>
+    <view class='information-title'>园区信息</view>
+    <view class='information-content'>
+      <view class='information-content-left'>
+        <text>出入口数量:</text>
+        {{depotDetail.details.depotPark.passagewayNum}}
+      </view>
+      <view class='information-content-right'>
+        <text>路面:</text>
+        {{depotDetail.details.depotPark.pavement}}
+      </view>
+    </view>
+    <view class='information-content'>
+      <view class='information-content-single'>
+        <text>配套设施:</text>
+        {{depotDetail.details.depotPark.facilities}}
+      </view>
+    </view>
+    <view class='information-title'>安防</view>
+    <view class='information-content'>
+      <view class='information-content-single'>{{depotDetail.details.depotPark.security}}</view>
+    </view>
+  </view>
+</view>

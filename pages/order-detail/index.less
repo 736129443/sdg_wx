@@ -1,0 +1,174 @@
+page {
+    height    : 100%;
+    background: #f2f2f2;
+}
+
+.container-bg {
+    padding  : 16rpx 28rpx;
+    font-size: 14px;
+    color    : #333;
+
+    .block {
+        margin-top: 14rpx;
+        background: #fff;
+        width     : 100%;
+        padding   : 14rpx 0;
+        box-sizing: border-box;
+    }
+
+    .driver-info-bg {
+        display        : flex;
+        justify-content: space-around;
+        align-items    : center;
+
+        .driver-name {
+            margin-left: -30rpx;
+        }
+
+        .driver-avatar {
+            display      : inline-block;
+            width        : 120rpx;
+            height       : 120rpx;
+            border-radius: 60rpx;
+            margin-left  : -15rpx;
+        }
+
+        .number-plate {
+            margin-left: -20rpx;
+            display    : inline-block;
+        }
+
+        .order-type {
+            margin-right: -20rpx;
+        }
+    }
+
+    .order-info-bg {
+        margin-top: 0;
+        background: #f2f2f2;
+
+        .order-top {
+            background: #fff;
+            padding   : 30rpx 40rpx;
+        }
+
+        .order-bottom {
+            padding   : 10rpx 20rpx;
+            margin-top: 6rpx;
+            background: #fff;
+        }
+    }
+
+    .car-info-bg {
+        margin-top: 0;
+        padding   : 30rpx 40rpx;
+    }
+
+    .info-cell {
+        line-height: 60rpx;
+
+        .title-label {
+            color: #999;
+        }
+    }
+
+    .cost-info-bg {
+        padding        : 30rpx 40rpx;
+        display        : flex;
+        justify-content: space-between;
+
+        .price-bg {
+            color: #999;
+
+            .price-detail-label {
+                color    : #333;
+                font-size: 12px;
+            }
+        }
+
+        .price-text {
+            color: #333;
+        }
+    }
+
+    .trace-info-bg {
+        padding: 10rpx 40rpx;
+
+        .tracr-title {
+            padding      : 10rpx 0 12rpx;
+            font-size    : 16px;
+            font-weight  : bold;
+            border-bottom: 2rpx solid #f2f2f2;
+        }
+
+        .address-bg {
+            display    : flex;
+            align-items: center;
+            position   : relative;
+
+            .point-img {
+                display: inline-block;
+                width  : 20rpx;
+                height : 20rpx;
+            }
+
+            .begin::after {
+                content   : '';
+                display   : block;
+                position  : absolute;
+                width     : 2px;
+                background: #f2f2f2;
+                top       : calc(~ "50% + 10rpx");
+                bottom    : 0;
+                left      : 10rpx;
+            }
+
+            .pass::after {
+                content   : '';
+                display   : block;
+                position  : absolute;
+                width     : 2px;
+                background: #f2f2f2;
+                top       : calc(~ "50% + 10rpx");
+                bottom    : 0;
+                left      : 10rpx;
+            }
+
+            .pass::before {
+                content   : '';
+                display   : block;
+                position  : absolute;
+                width     : 2px;
+                background: #f2f2f2;
+                top       : 0;
+                bottom    : calc(~ "50% + 10rpx");
+                left      : 10rpx;
+            }
+
+            .end::before {
+                content   : '';
+                display   : block;
+                position  : absolute;
+                width     : 2px;
+                background: #f2f2f2;
+                top       : 0;
+                bottom    : calc(~ "50% + 10rpx");
+                left      : 10rpx;
+            }
+
+            .address-text-bg {
+                flex          : 1;
+                display       : flex;
+                font-size     : 14px;
+                color         : #333;
+                padding       : 20rpx;
+                flex-direction: column;
+
+                .sub-address {
+                    font-size: 12px;
+                    color    : #999;
+                }
+            }
+        }
+    }
+}

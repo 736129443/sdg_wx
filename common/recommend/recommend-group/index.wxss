@@ -1,0 +1,15 @@
+.recommend-scroll .recommend-bg {
+  padding-top: 16rpx;
+  width: 100%;
+  background: #f2f2f2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.recommend-scroll .recommend-bg .item-bg {
+  display: inline-block;
+  width: 49.5%;
+  margin-bottom: 1%;
+  background: #fff;
+  text-align: center;
+}

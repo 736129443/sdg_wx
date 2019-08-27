@@ -1,0 +1,8 @@
+{
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "common-coupon-item": "/common/coupons/common-coupon-item/index",
+        "van-tab": "/vanUI/dist/tab/index",
+        "van-tabs": "/vanUI/dist/tabs/index"
+    }
+}

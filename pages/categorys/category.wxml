@@ -1,0 +1,64 @@
+<!-- 商品列表 
+-------------------------------------------
+1、Category-Search 搜索组件
+
+ Attributes属性---
+
+（1），src--跳转URL路径--String类型
+
+-------------------------------------------
+
+2、Category-List-Left 分类组件
+
+ Attributes属性---
+
+（1），list--类型数据数组--Array类型
+
+（2），autoIntHeight--滚动区总高度（计算自动滚动属性）--Number类型
+
+（3），singleNavHeight--平均高度（依赖滚动区总高度，计算自动滚动属性）--Number类型
+
+（4），total--设置添加图片的总张数--Number类型（默认：9）
+
+ Events事件---
+
+（1），bind:myListLeft事件回调e.detail.index 返回当前数组索引
+
+--------------------------------------------
+3，Category-List-Right  商品列表组件
+
+ Attributes属性---
+
+（1），list--商品数据数组--Array类型
+
+ Events事件---
+
+（1），bind:myReachBottom 向下滚动末尾触发
+
+（2），bind:myClickPhone 拨打电话触发
+
+4，Category-Notificationt  广告通知消息组件
+
+Attributes属性---
+
+（1），notice-list--通知信息数组--Array类型
+
+-->
+
+<category-group style='margin-bottom:110rpx;'>
+    <category-search bindtap='toSearch'> </category-search>
+    <category-scroll-group class='content'>
+        <category-list-left list='{{categories}}' bind:myListLeft='listLeft' auto-int-height='{{autoIntHeight}}'
+            single-nav-height='{{singleNavHeight}}'> </category-list-left>
+        <category-list-right to-page="/pages/goods-detail/goods-detail" imgUrl="{{imgUrl}}" style='width:78%'
+            list='{{goods}}' bind:myReachBottom='myReachBottom' bind:myClickPhone='myClickPhone'>
+            <category-notification notice-list='{{noticeList}}'> </category-notification>
+        </category-list-right>
+    </category-scroll-group>
+</category-group>
+
+<!-- <category-left  single-nav-height='{{singleNavHeight}}' category-selected='{{categorySelected}}' category-to-view='{{categoryToView}}' bind:myevent='onCategoryClick'>
+</category-left>
+      <category-right  goods-to-view='{{goodsToView}}' bind:myscroll='scroll'>
+             <category-notification></category-notification>
+</category-right> -->

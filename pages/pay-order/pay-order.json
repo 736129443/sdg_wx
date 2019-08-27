@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "确认订单",
+  "usingComponents": {
+    "van-card": "/vanUI/dist/card/index",
+    "van-submit-bar": "/vanUI/dist/submit-bar/index",
+    "van-panel": "/vanUI/dist/panel/index"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "搜索",
+  "usingComponents": {
+    "category-group": "/common/category-item/category-group/category-group",
+    "category-search": "/common/category-item/category-search/category-search",
+    "category-scroll-group": "/common/category-item/category-scroll-group/category-scroll-group",
+    "category-list-left": "/common/category-item/category-list-left/index",
+    "category-list-right": "/common/category-item/category-list-right/index",
+    "category-notification": "/common/category-item/category-notification/category-notification"
+  }
+}

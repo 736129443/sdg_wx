@@ -1,0 +1,24 @@
+<view class="address-bg" wx:if="{{status==0}}">
+    <image class="point-img begin" src="/images/order-manager/ic_homepage_start.png"></image>
+    <view class="address-text-bg">
+        <view class="address">{{info.address}}</view>
+        <view class="sub-address">{{info.province}}{{info.area}}{{info.county}}</view>
+        <!-- <view wx:if="need" class="sub-address">{{info.province}}{{info.area}}{{info.county}}</view> -->
+    </view>
+</view>
+<view class="address-bg" wx:elif="{{status==1}}">
+    <image class="point-img begin end" src="/images/order-manager/ic_homepage_last.png"></image>
+    <view class="address-text-bg">
+        <view class="address">{{info.address}}</view>
+        <view class="sub-address">{{info.province}}{{info.area}}{{info.county}}</view>
+        <!-- <view class="sub-address">{{info.province}}{{info.area}}{{info.county}}</view> -->
+    </view>
+</view>
+<view class="address-bg" wx:elif="{{status==2}}">
+    <image class="point-img end" src="/images/order-manager/ic_homepage_last.png"></image>
+    <view class="address-text-bg">
+        <view class="address">{{info.address}}</view>
+        <view class="sub-address">{{info.province}}{{info.area}}{{info.county}}</view>
+        <!-- <view class="sub-address">{{info.province}}{{info.area}}{{info.county}}</view> -->
+    </view>
+</view>

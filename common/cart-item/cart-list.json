@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+      "van-button": "/vanUI/dist/button/index",
+      "van-stepper": "/vanUI/dist/stepper/index"
+    }
+}

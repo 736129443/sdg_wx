@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "购物车",
+  "usingComponents": {
+    "van-stepper": "/vanUI/dist/stepper/index",
+    "van-button": "/vanUI/dist/button/index",
+    "van-submit-bar": "/vanUI/dist/submit-bar/index",
+    "cart-list": "/common/cart-item/cart-list"
+  }
+}

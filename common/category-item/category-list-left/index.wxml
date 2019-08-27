@@ -1,0 +1,9 @@
+<!--common/category-item/category-left2/index.wxml-->
+ <scroll-view  class='left' scroll-y="true" scroll-top="{{navScrollTop}}">
+    <block wx:for="{{list}}" wx:for-index="idx" wx:key="id">
+      <view style='height:{{singleNavHeight}}px; line-height:{{singleNavHeight}}px' class="category-item {{categorySelected==idx?'category-item-active':''}}" data-id='{{item.id}}' data-idx='{{idx}}' bindtap='onCategoryClick' >
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+      <slot />
+</scroll-view>

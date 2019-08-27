@@ -1,0 +1,55 @@
+<view class="bg">
+  <image class="state-img" wx:if="{{state!='ISSUED'}}" src="/images/coupons/{{state}}-icon.png"></image>
+  <view class="coupon-bg">
+    <view class="left-view">
+      <view class="goods-bg">
+        <x-image class='goods-img' mode='aspectFill' src="{{picUrl}}" lazy-load="true" broken-image="/images/placeholder.png"></x-image>
+        <view class="text-bg">
+          <view class="title-texg">{{title}}</view>
+          <view style="font-size: 12px;line-height: 16px;color:#999">
+            <view class="">
+              <view class="">使用时间：</view>
+              {{info.startUseDate}}-{{info.endUseDate}}
+            </view>
+            <view class="limit-title-bg" bindtap="extendOrshrink">
+              <label>使用限制</label>
+              <view class="icon-bg">
+                <van-icon name="arrow-left" size="12px" custom-class="{{isExtend?'right-icon-extend':'right-icon'}}" color="#999"></van-icon>
+              </view>
+            </view>
+            <!-- <view class="">
+                            <view class="">条件限制：</view>
+                            {{limit}}
+                        </view> -->
+            <!-- <view class="old-price-bg">
+                            拼单价
+                            <text class="old-price">￥{{sharePrice}}</text>
+                        </view>
+                        <view class="new-price-bg">
+                            领券后 ￥
+                            <text class="new-price">{{discounts}}</text>
+                        </view> -->
+          </view>
+        </view>
+      </view>
+      <!-- <view class="process-bg">
+                <view class="used-bg" style="width: {{surplus}}%"></view>
+            </view>
+            <label style="font-size: 12px;margin-left: 10rpx;">券仅剩{{surplus}}%</label> -->
+    </view>
+    <view class="radius-img-bg" hover-class="none" hover-stop-propagation="false">
+      <image class="radius-img" src="/images/card_middle_ad.png"></image>
+    </view>
+    <view class="right-view">
+      <view class="coupon-price-bg">
+        ￥
+        <text class="coupon-price">{{couponPrice}}</text>
+      </view>
+      <!-- <view class="coupon-condition">{{limit}}</view> -->
+      <view class="coupon-btn" wx:if="{{state=='ISSUED'}}" bindtap="useIt">立即使用</view>
+    </view>
+  </view>
+  <view class="extend-panel-bg {{isExtend?'panel-bg-extend':'extend-panel-shrink'}}">
+    <view class="extend-panel-content" hidden="{{!isExtend}}">{{limit?limit:'暂无限制'}}</view>
+  </view>
+</view>

@@ -1,0 +1,84 @@
+.order-item-bg {
+    display       : flex;
+    flex-direction: column;
+    width         : 100%;
+    background    : #f2f2f2;
+    font-size     : 14px;
+
+    .bg-view {
+        width     : 100%;
+        background: #fff;
+        padding   : 0 30rpx;
+        box-sizing: border-box;
+        position  : relative;
+    }
+
+    .top-bg {
+        margin-top : 14rpx;
+        font-size  : 14px;
+        color      : #333;
+        line-height: 44px;
+
+        .time {
+            display: inline-block;
+        }
+
+        .car-type {
+            float: right;
+        }
+
+        .right-icon-text {
+            color: #999;
+            float: right;
+        }
+    }
+
+    .content-bg {
+        margin-top: 2px;
+        clear     : both;
+        display   : flex;
+
+        .process-bg {
+            flex: 1;
+        }
+
+        .status-img {
+            align-self: flex-start;
+            margin-top: 20rpx;
+            width     : 140rpx;
+            height    : 140rpx;
+        }
+    }
+
+    .bottom-bg {
+        margin-top: 2px;
+
+        .bottom-sub-bg {
+            display       : flex;
+            flex-direction: row-reverse;
+            align-items   : center;
+            padding       : 14rpx 0;
+
+            .bottom-btn {
+                display     : inline-block;
+                border-color: #ccc;
+                margin-left : 14rpx;
+            }
+
+            .order-again {
+                display     : inline-block;
+                border-color: red;
+                color       : red;
+                margin-left : 14rpx;
+            }
+        }
+
+        .underway {
+            justify-content: space-between;
+
+            .wait-tips {
+                color: red;
+            }
+        }
+    }
+}

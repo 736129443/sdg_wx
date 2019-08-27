@@ -1,0 +1,49 @@
+/* pages/price-detail/index.wxss */
+page{
+  height: 100%;
+  color:rgba(0, 0, 0, .75);
+  font-size: 34rpx;
+}
+.price-detail{
+  min-height: 100%;
+  width: 100%;
+  background: #F4F4F4;
+  position: relative;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+  letter-spacing: 2rpx;
+}
+
+.price-detail-bar{
+  background: white;
+  padding: 40rpx 80rpx;
+}
+.price-num,.price-title{
+  text-align: center;
+  color: rgba(0, 0, 0, .45);
+  font-size: 28rpx;
+}
+.price-title{
+  padding: 16rpx 0;
+}
+.price-num text{
+  color: rgba(0, 0, 0, .75);
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.price-inline,.price-inline-buttom{
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx; 
+  padding: 4rpx;
+}
+.price-inline-title{
+  color: rgba(0, 0, 0, .45);
+}
+.price-inline-buttom{
+  padding: 55rpx 0 20rpx 0;
+  color: rgba(0, 0, 0, .45);
+}
+.price-inline-buttom-text{
+  color: #F96F37;
+}

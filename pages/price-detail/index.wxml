@@ -1,0 +1,15 @@
+<!--pages/price-detail/index.wxml-->
+<view class='price-detail'>
+    <view class='price-detail-bar'>
+          <view class='price-num'>
+            约<text>{{priceDetail.predict}}</text>元
+          </view>
+           <view class='price-title'>
+              费用明细
+          </view>
+          <view class='price-inline'> <view class='price-inline-title'>预计行驶</view> <view>{{priceDetail.predictRun}}公里</view></view>  
+          <view class='price-inline'> <view class='price-inline-title'>起步价(3公里)</view> <view>{{priceDetail.initiatePrice}}元</view></view> 
+          <view class='price-inline'> <view class='price-inline-title'>预计行驶(超出1公里)</view> <view>{{priceDetail.beyondPrice}}元</view></view> 
+          <view class='price-inline-buttom'> <view >预计行驶</view> <view  class='price-inline-buttom-text' >{{priceDetail.discounts}}元> </view></view> 
+    </view>
+</view>

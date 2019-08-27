@@ -1,0 +1,138 @@
+/* pages/login/login.wxss */
+.login{
+  padding:70rpx  70rpx  0 70rpx ;
+  font-size:36rpx; 
+}
+.login-title{
+  font-size:48rpx;
+  letter-spacing:8rpx;
+  font-weight:600;
+  margin: 0 0 50rpx 0; 
+}
+.login-model{
+   position: relative;
+   font-size:34rpx; 
+}
+.login-model-two{
+   position: relative;
+   font-size:34rpx; 
+   margin-bottom:140rpx;
+}
+.login-model-three{
+   margin:110rpx 0;
+   text-align:right;
+   letter-spacing:6rpx; 
+   font-size:34rpx; 
+}
+.login-model-agreement {
+  margin-top:30rpx;
+  text-align: center;
+  font-size:32rpx; 
+}
+.login-model-agreement text{
+  color:rgba(0, 0, 0, .3);
+  letter-spacing:2rpx;
+}
+
+.left-img{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  left: 0;
+  top:42rpx;
+}
+.left-img-two{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  left: 0;
+  top:46rpx;
+}
+.right-img{
+  width:38rpx;
+  height: 38rpx;
+  position: absolute;
+  right:10rpx;
+  top:50rpx;
+}
+.input-phone{
+  line-height:132rpx;
+  height:132rpx;
+  padding:0 70rpx; 
+}
+.input-code{
+  line-height:140rpx;
+  height:140rpx;
+  padding:0 260rpx 0 70rpx; 
+}
+.letter-spacing{
+  letter-spacing:4rpx; 
+}
+.color{
+  color: rgba(0, 0, 0, .3)
+}
+.code-button{
+  position: absolute;
+  right:4rpx;
+  top:40rpx;
+  color: #FF4444;
+  border-bottom: 2rpx solid  #FF4444;
+  text-align:center;
+}
+.code-button-time{
+  position: absolute;
+  right:10rpx;
+  top:40rpx;
+  color: #FF4444;
+  text-align:center;
+}
+
+button{
+  margin-top: 50rpx;
+  border-radius:100rpx;
+  background: #FF4444;
+  letter-spacing:12rpx;
+  color: white;
+}
+button::after{
+  border: 0
+}
+.login::before{
+  position: absolute; 
+  content: '';
+  width: 100%;
+  left: 0;
+  top: 0;
+  height:1px;
+  background-color:rgba(0,0,0,.1);
+  -webkit-transform: scale(1, 0.5);
+  transform: scale(1, 0.5);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.login-model::after,.login-model-two::after{
+  position: absolute; 
+  content: '';
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height:1px;
+  background-color:rgba(0,0,0,.1);
+  -webkit-transform: scale(1, 0.5);
+  transform: scale(1, 0.5);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+ 
+/* .button{
+  border-radius:100rpx;
+  background: #FF4444;
+  color: white;
+  line-height:100rpx;
+  letter-spacing:12rpx;
+  text-align: center;
+}
+.button:active{
+   background:#FF4444b0;
+} */
+

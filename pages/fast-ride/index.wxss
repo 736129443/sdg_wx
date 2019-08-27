@@ -1,0 +1,274 @@
+page {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.nav {
+  border-bottom: 1px #ccc solid;
+}
+
+.open-car-bar{
+  background: white;
+  padding:20rpx 0;
+}
+.map_container{
+  min-height: 100%;
+  height: 100%;
+  background: #F4F4F4;
+}
+.underway-car-bar{
+  padding:0 0 20rpx 0;
+  margin: 20rpx 0 0 0;
+}
+.underway-car-title{
+  line-height: 80rpx;
+  letter-spacing:2rpx;
+  font-size: 28rpx;
+  height: 80rpx;
+  padding: 0 30rpx;
+  font-weight: bold;
+  background: #F4F4F4;
+}
+.map_container .map {
+  width: 100%;
+  height:60%;
+}
+.default-box{
+  transition: all 0.02s;
+  /* opacity:1; */
+}
+.map-content{
+  /* opacity:0;
+  height:0;  */
+  transition: all 0.02s;
+  display: none;
+}
+.shows{
+  /* opacity:1; */
+  height:100%; 
+  display: block;
+}
+.hiddens{
+  /* opacity:0;
+  height:0;  */
+  display: none;
+}
+.map_container .map .self-location {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  width: 52rpx;
+  height: 85rpx;
+}
+.map_container .option-bg {
+  position: relative;
+}
+.map_container .option-bg .head-bg {
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+.van-tabs{
+ margin: 0 0 16rpx 0;
+}
+.map_container .option-bg .common-btn {
+  position: absolute;
+  right: 0;
+  top: -14rpx;
+  padding: 14rpx 30rpx 14rpx 10rpx;
+  font-size: 14px;
+}
+.map_container .option-bg .car-type-select-bg {
+  position: relative;
+}
+.map_container .option-bg .car-type-select-bg .tabs {
+  position: relative;
+}
+.map_container .option-bg .car-type-select-bg .switch-icon {
+  position: absolute;
+  bottom: 50rpx;
+  z-index: 2;
+}
+.map_container .option-bg .car-type-select-bg .left {
+  left: 5px;
+}
+.map_container .option-bg .car-type-select-bg .right {
+  right: 5px;
+}
+.map_container .option-bg .time-select-bg {
+  text-align: center;
+  width: 70%;
+  margin: 10rpx auto;
+  color: #333;
+  font-size: 14px;
+}
+.map_container .option-bg .address-select-bg {
+  padding: 0 30rpx;
+  position: relative;
+  margin-top: 10rpx;
+}
+.map_container .option-bg .address-select-bg .change-img {
+  padding: 14rpx;
+  width: 26rpx;
+  height: 26rpx;
+  position: absolute;
+  z-index: 3;
+  left: 10rpx;
+  top: calc(50% - 30rpx);
+}
+.next-btn-bg {
+  padding: 20rpx 30rpx;
+}
+.popview-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+}
+.popup{
+  position: fixed;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+.content{
+  padding: 30rpx;
+  position: absolute;
+  bottom: 0;
+  background: white;
+  z-index: 1001;
+  width: 85%;
+  left: 50%;
+  transform: translate(-50%, -5%);
+  border-radius: 6rpx;
+  border: 2rpx solid rgba(0, 0, 0, 0.2);
+}
+.content-box{
+  padding: 30rpx;
+  background: white;
+  height: 39.9%;
+  box-sizing: border-box;
+}
+.content-item{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  letter-spacing: 2rpx;
+}
+.content-item .contet-img image{
+   width: 40rpx;
+   height: 40rpx;
+   position: relative;
+   top: 4rpx;  
+}
+.contet-text{
+  font-size: 28rpx;
+  margin-left:20rpx;
+}
+.contet-text .content-address-detail{
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 26rpx;
+}
+.content-item view.van-cell{
+  padding: 20rpx;
+  font-size: 28rpx;
+  width: 500rpx;
+}
+view.van-button{
+  margin: 10rpx 0;
+}
+.tab-content{
+  position: relative;
+  z-index: 99;  
+}
+.auto-price{
+  text-align: center;
+  font-size:24rpx;
+  letter-spacing: 2rpx;
+  color: rgba(0, 0, 0, 0.75);
+  margin: 20rpx 0;
+}
+.auto-price .price{
+  font-size:50rpx;
+  color:#FF6600;
+} 
+.auto-price .price-detail{
+  color: rgba(0, 0, 0, 0.4);
+}
+.goods-infomation{
+  background: white;
+  letter-spacing: 2rpx;
+  margin:20rpx 0 0 0;
+  padding:16rpx 0;
+}
+.infomation-title{
+  font-weight: bold;
+  font-size: 30rpx;
+  letter-spacing:4rpx;
+}
+.infomation-content{
+  margin:16rpx 0 0 0; 
+}
+.infomation-content text{
+  margin:0 30rpx 0 0;
+  color: rgba(0, 0, 0, 0.55);
+}
+.goods-cell{
+  padding: 20rpx 30rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.priceInput{
+  border-bottom: 2rpx solid rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  width: 100rpx;
+  margin-left: 20rpx;
+  position: relative;
+  top: 16rpx;
+}
+.goods-cell-title{
+  font-weight: bold;
+  font-size: 30rpx;
+  letter-spacing:4rpx;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+.goods-cell-content{
+  color: rgba(0, 0, 0, 0.55);
+  padding-bottom: 24rpx;
+  box-sizing: border-box;
+}
+.goods-cell-content text{
+  font-size: 24rpx;
+  letter-spacing: 2rpx;
+}
+.text-color{
+  color:#FF6600;
+}
+.insurance-bar-title{
+    margin: 0 0 20rpx 0;
+    font-weight: bold;
+}
+.insurance-bar{
+  background: white;
+  padding: 20rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  align-items: center;
+}
+.insurance-bar-text {
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.55);
+  letter-spacing: 2rpx;
+}
+.insurance-bar-text text{
+   color:  #E83C38;
+}
+/* .tab-one .van-tabs__wrap{
+  position: fixed;
+} */

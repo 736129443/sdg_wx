@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "van-row": "/vanUI/dist/row/index",
+        "van-col": "/vanUI/dist/col/index"
+    }
+}

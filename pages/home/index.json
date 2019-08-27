@@ -1,0 +1,11 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "goods-item": "/common/goods-item/index",
+    "van-tag": "/vanUI/dist/tag/index",
+    "van-button": "/vanUI/dist/button/index",
+    "custom-nav-bar": "/common/custom-nav-bar/index"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

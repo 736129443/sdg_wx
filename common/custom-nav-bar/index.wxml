@@ -1,0 +1,13 @@
+<van-nav-bar z-index="9999" fixed>
+    <navigator open-type="navigateBack" slot="left" wx:if="{{showBack}}">
+        <van-icon name="arrow-left" size="20px" />
+    </navigator>
+    <van-icon wx:if="{{icon}}" bind:click="leftClick" slot="left" name="{{icon}}" size="22px"></van-icon>
+    <view bindtap="titleClick" slot="title">
+        <van-icon size="24px" custom-style="bottom:-5px" name="location" />
+        <label style="margin-left:6rpx;">
+            {{title}}
+            <!-- <text style="font-size:20px">▾</text> -->
+        </label>
+    </view>
+</van-nav-bar>

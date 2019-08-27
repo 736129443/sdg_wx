@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "货源",
+  "usingComponents": {
+    "category-list-right": "/common/category-item/category-list-right/index",
+    "van-nav-bar": "/vanUI/dist/nav-bar/index",
+    "van-button": "/vanUI/dist/button/index"
+  }
+}
